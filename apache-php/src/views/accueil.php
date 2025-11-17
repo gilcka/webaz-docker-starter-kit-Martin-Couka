@@ -3,9 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Escape Game Géographique</title>
 </head>
 <body>
-    <p>Hello World</p>
+    <title>Nom du jeu</title>
+    
+    <!-- Photo de Jules -->
+
+    <div id = 'consignes'>
+        kjqdshjdh
+    </div>
+
+    <div id='jouer'>
+        <a href="/escape">C'est parti</a>
+    </div>
 </body>
 </html>
+

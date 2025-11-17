@@ -6,17 +6,7 @@
     <title>Escape Game Géographique</title>
 </head>
 <body>
-    <title>Nom du jeu</title>
-    
-    <!-- Photo de Jules -->
-
-    <div id = 'consignes'>
-        kjqdshjdh
-    </div>
-
-    <div id='jouer'>
-        <a href="/escape">C'est parti</a>
-    </div>
+    Test
 </body>
 </html>
 

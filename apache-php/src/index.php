@@ -5,7 +5,7 @@ declare(strict_types=1);
 require_once 'flight/Flight.php';
 
 Flight::route('/', function() {
-    Flight::render('accueil');
+    Flight::render('test');
 });
 
 Flight::route('/test-db', function () {
@@ -23,6 +23,15 @@ Flight::route('/test-db', function () {
     $results = pg_fetch_all($query);
     Flight::json($results);
 });
+
+Flight::route('/menu', function() {
+    Flight::render('accueil');
+});
+
+Flight::route('/escape', function () {
+    Flight::render('escape');
+});
+
 
 Flight::start();
 
