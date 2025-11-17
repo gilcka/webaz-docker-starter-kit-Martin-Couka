@@ -8,9 +8,13 @@ include 'connect.php';
 
 Flight::set('connexion', $link);
 
+Flight::route('/', function() {
+    Flight::render('test');
+});
+
 Flight::route('/menu', function() {
     Flight::render('menu');
-})
+});
 
 Flight::route('/escape', function () {
     Flight::render('escape_game');
