@@ -6,9 +6,9 @@
     <title>Escape Game Géographique</title>
 </head>
 <body>
-    <title>Nom du jeu</title>
+    <h1>RAMENE LOUISE</h1>
     
-    <!-- Photo de Jules -->
+    <p id="Jules"><img src="image/jules_accueil.jpg" alt="Accueil de Jules le secrétaire"></p>
 
     <div id = 'consignes'>
         kjqdshjdh
