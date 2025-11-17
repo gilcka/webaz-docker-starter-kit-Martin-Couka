@@ -1,0 +1,51 @@
+body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: grid;
+      grid-template-columns: 100px 1fr; /* Colonne de gauche de 100px et colonne de droite qui prend le reste */
+      grid-template-rows: auto 1fr; /* Ligne 1 prend son contenu et la ligne 2 prend le reste */
+      grid-template-areas:
+        "header header"
+        "sidebar main"; /* Définit la disposition des éléments dans la grille */
+    }
+
+    /* Ligne 1 (entête) */
+    header {
+      grid-area: header;
+      background-color: #4CAF50; /* Juste pour l'exemple */
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* Ligne 2 : colonne de gauche (sidebar) */
+    aside {
+      grid-area: sidebar;
+      background-color: #f4f4f4;
+      padding: 10px;
+      height: 100%;
+    }
+
+    /* La colonne de droite (main) */
+    main {
+      grid-area: main;
+      padding: 10px;
+      background-color: #ddd;
+    }
+
+    /* Rendre la colonne de gauche divisée en 5 lignes égales */
+    aside {
+      display: grid;
+      grid-template-rows: repeat(5, 1fr); /* Divise la colonne en 5 lignes égales */
+    }
+
+    /* Style des éléments dans la colonne de gauche */
+    aside > div {
+      background-color: #ccc;
+      border: 1px solid #aaa;
+      padding: 5px;
+      text-align: center;
+    }
+    
+#map { height: 180px; }
