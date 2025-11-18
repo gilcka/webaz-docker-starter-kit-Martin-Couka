@@ -8,7 +8,7 @@
 <body>
     <h1>RAMENE LOUISE</h1>
     
-    <p id="Jules"><img src="image/jules_accueil.jpg" alt="Accueil de Jules le secrétaire"></p>
+    <p id="Jules"><img src="images/jules_accueil.jpg" alt="Accueil de Jules le secrétaire" height='200' width='125'></p>
 
     <div id = 'consignes'>
         kjqdshjdh

@@ -5,7 +5,7 @@ declare(strict_types=1);
 require_once 'flight/Flight.php';
 
 Flight::route('/', function() {
-    Flight::render('test');
+    Flight::render('accueil_matheo');
 });
 
 Flight::route('/test-db', function () {
