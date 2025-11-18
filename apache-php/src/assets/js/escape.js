@@ -28,10 +28,10 @@ var rectangle = L.rectangle([
     [ensgLat - offset, ensgLon - offset], // Sud-Ouest
     [ensgLat + offset, ensgLon + offset]  // Nord-Est
 ], {
-    color: 'red',        // Bordure rouge
-    fillColor: 'red',    // Remplissage rouge (optionnel)
-    fillOpacity: 0.2,    // Transparence du remplissage
-    weight: 3            // Épaisseur de la bordure
+    color: 'red',        
+    fillColor: 'red',    
+    fillOpacity: 0.2,    
+    weight: 3            
 }).addTo(map);
 
 //Affichage permanent de Jules si besoin des consignes
@@ -54,8 +54,8 @@ markerJules.bindPopup(`
         <h3>Rappel des cibles</h3>
         <ul>
             <li>Ramasser les 5 objets que Louise a laissé tomber de son sac,</li> 
-            <li>trouver le code du CROUS,</li>
-            <li>trouver ses clés de maison en échange de potins...</li>
+            <li>trouver le code de sa résidence,</li>
+            <li>trouver ses clés de maison en échange de potins numériques</li>
         </ul>
     </div>
 `);

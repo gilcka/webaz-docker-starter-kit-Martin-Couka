@@ -3,45 +3,51 @@ body {
   padding: 0;
   height: 100vh;
   display: grid;
-  grid-template-columns: 100px 1fr; /* Colonne de gauche de 100px et colonne de droite qui prend le reste */
-  grid-template-rows: auto 1fr; /* Ligne 1 prend son contenu et la ligne 2 prend le reste */
+  grid-template-columns: 150px 1fr; 
+  grid-template-rows: 110px 1fr; 
   grid-template-areas:
     "header header"
-    "sidebar main"; /* Définit la disposition des éléments dans la grille */
+    "sidebar main";
 }
 
-/* Ligne 1 (entête) */
+/* Barre du haut */
 header {
   grid-area: header;
   background-color: #4CAF50;
   color: white;
   text-align: center;
-  padding: 20px;
+  padding: 0;
 }
 
-/* Ligne 2 : colonne de gauche (sidebar) */
+/* Colonne Inventaire en bas à gauche */
 aside {
   grid-area: sidebar;
   background-color: #f4f4f4;
   padding: 10px;
   height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-/* La colonne de droite (main) */
-main {
-  grid-area: main;
-  padding: 10px;
-  background-color: #ddd;
+/* Titre de l'inventaire */
+.titre_inventaire {
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  font-size: 18px;
+  border-radius: 5px 5px 0 0;
 }
 
-/* Rendre la colonne de gauche divisée en 5 lignes égales */
-aside {
+/* Grille des cases d'inventaire */
+.inventaire {
   display: grid;
-  grid-template-rows: repeat(5, 1fr); /* Divise la colonne en 5 lignes égales */
+  grid-template-rows: repeat(5, 1fr);
+  flex-grow: 1;
 }
 
-/* Style des éléments dans la colonne de gauche */
-aside > div {
+/* Style des cases dans la grille d'inventaire */
+.inventaire > div {
   background-color: #ccc;
   border: 1px solid #aaa;
   padding: 5px;
@@ -49,15 +55,23 @@ aside > div {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 80px; /* Hauteur minimale pour voir le contenu */
+  min-height: 80px;
 }
 
-aside > div p {
+.inventaire > div p {
   margin: 0;
   font-size: 14px;
   font-weight: bold;
   color: #333;
 }
+
+/* La carte en bas à droite */
+main {
+  grid-area: main;
+  padding: 10px;
+  background-color: #ddd;
+}
+
 
 /* La carte prend toute la hauteur de la zone main */
 #map { 

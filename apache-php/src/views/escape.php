@@ -14,21 +14,20 @@
 </head>
 <body>
   <header>
-    <h1>RAMENE LOUISE</h1>
+    <h1>LOUISE VADEAUDEAU</h1>
+    <h4><i>Baladez-vous et zoomez sur la carte pour trouver les objets</i></h4>
   </header>
 
-    <aside>
+<aside>
+    <div class="titre_inventaire"><b>Louisa Mémaud</b></div>
+    <div class="inventaire">
         <div><!-- Case 1 vide --></div>
         <div><!-- Case 2 vide --></div>
         <div><!-- Case 3 vide --></div>
         <div><!-- Case 4 vide --></div>
         <div><!-- Case 5 vide --></div>
-        <div><!-- Case 5 vide --></div>
-        <div><!-- Case 5 vide --></div>
-        <div><!-- Case 5 vide --></div>
-        <div><!-- Case 5 vide --></div>
-        <div><!-- Case 5 vide --></div>
-    </aside>
+    </div>
+</aside>
 
   <main>
     <div id="map"></div>

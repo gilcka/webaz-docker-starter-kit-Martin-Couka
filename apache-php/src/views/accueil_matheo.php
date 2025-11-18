@@ -3,15 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets\css\accueil_matheo.css">
     <title>Escape Game Géographique</title>
 </head>
 <body>
-    <h1>RAMENE LOUISE</h1>
+    <header>
+        <h1>LOUISE VADEAUDEAU</h1>
+    </header>
     
-    <p id="Mathep"><img src="images/Matheo_fumeur.jpg" alt="Accueil de Matheo qui fume" height='200' width='125'></p>
+    <p id="matheo"><img src="images/Matheo_fumeur.jpg" alt="Accueil de Matheo qui fume" height='550' width='300'></p>
 
     <div id = 'redirection'>
-        Vous rencontrez Mathéo, le responsable de la soirée, qui fume sa clope. Il n'a pas l'air très investi dans son rôle de président BDE et vous redirige vers Jules son fidèle secrétaire.
+        Vous rencontrez Mathéo Ohédubateau, le responsable de la soirée, qui fume sa clope. Il n'a pas l'air très investi dans son rôle de président BDE Eteintcelle et vous redirige vers Jules Adsl son fidèle secrétaire.
     </div>
 
     <div id='voir_Jules'>

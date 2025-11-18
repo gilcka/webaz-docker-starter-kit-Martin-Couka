@@ -1,0 +1,60 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: auto 1fr; 
+  grid-template-rows: auto 1fr auto; 
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+}
+
+header {
+  grid-area: header;
+  background-color: #4CAF50;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+#redirection {
+  grid-area: main;
+  display : flex;
+  justify-content: center;
+  align-items: center;
+  grid-template-rows: auto auto auto;
+  padding: 10px;
+  background-color: #ddd;
+}
+
+#matheo {
+  grid-area: sidebar;
+  margin: 30px;
+  padding: 10px;
+  background-color: #ddd;
+
+}
+
+#voir_Jules {
+  grid-area: footer;
+  display: flex;
+  align-items: flex-end; /* Aligne en bas */
+  justify-content: center; /* Centre horizontalement */
+  margin-top: 15px;
+  padding-bottom: 30px; /* Espace depuis le bas */
+}
+
+#voir_Jules a {
+  display: inline-block;
+  padding: 15px 40px;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
