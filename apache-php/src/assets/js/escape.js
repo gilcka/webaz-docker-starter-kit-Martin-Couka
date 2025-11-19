@@ -66,6 +66,10 @@ var inventaire = [];
 
 //Ajout sur la carte de tous les objets du sac de Louise qui sont disponibles en permanence, à un niveau de zoom très bas : test avec le téléphone, à automatiser via une base de données
 
+for (let i = 0; i <= 8; i++) {
+    // Code à exécuter
+}
+
 var markerTelephone = L.marker([telLat, telLon], {
     icon: L.divIcon({
         className: 'invisible-marker',
@@ -110,7 +114,7 @@ function ajouterObjetInventaire(nomObjet, imageUrl) {
 }
 
 map.on('zoomend', function() {
-    if (map.getZoom() >= 18 && !inventaire.includes('téléphone')) {
+    if (map.getZoom() >= 19 && !inventaire.includes('téléphone')) {
         if (!map.hasLayer(markerTelephone)) {
             markerTelephone.addTo(map);
         }
