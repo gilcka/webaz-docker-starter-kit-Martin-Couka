@@ -18,7 +18,7 @@ Flight::route('/test-db', function () {
     // Connexion BDD
     $link = pg_connect("host=$host port=$port dbname=$dbname user=$user password=$pass");
 
-    $sql = "SELECT * FROM points";
+    $sql = "SELECT * FROM objets;";
     $query = pg_query($link, $sql);
     $results = pg_fetch_all($query);
     Flight::json($results);
@@ -29,9 +29,25 @@ Flight::route('/menu', function() {
 });
 
 Flight::route('/escape', function () {
-    Flight::render('escape');
-});
+    $host = 'db';
+    $port = 5432;
+    $dbname = 'mydb';
+    $user = 'postgres';
+    $pass = 'postgres';
 
+    // Connexion BDD
+    $link = pg_connect("host=$host port=$port dbname=$dbname user=$user password=$pass");
+
+    // Récupérer latitude/longitude séparément (loc est un geometry)
+    $sql = "SELECT name, image, zoom, ST_Y(loc) AS lat, ST_X(loc) AS lon FROM objets;";
+    $query = pg_query($link, $sql);
+    $objets = pg_fetch_all($query);
+    if (!$objets) {
+        $objets = [];
+    }
+
+    Flight::render('escape', ['objets' => $objets]);
+});
 
 Flight::start();
 

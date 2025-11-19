@@ -17,6 +17,17 @@
         Vous rencontrez Mathéo Ohédubateau, le responsable de la soirée, qui fume sa clope. Il n'a pas l'air très investi dans son rôle de président BDE Eteintcelle et vous redirige vers Jules Adsl son fidèle secrétaire.
     </div>
 
+    <div id='hall_of_fame'>
+        <h3>Hall of Fame</h3>
+        <ul>
+            <li><!--futurs gagnants--></li>
+            <li><!--futurs gagnants--></li>
+            <li><!--futurs gagnants--></li>
+            <li><!--futurs gagnants--></li>
+            <li><!--futurs gagnants--></li>
+        </ul>
+    </div>
+
     <div id='voir_Jules'>
         <a href="/menu">Aller voir Jules</a>
     </div>

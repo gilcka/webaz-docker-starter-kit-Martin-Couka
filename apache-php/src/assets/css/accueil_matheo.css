@@ -21,11 +21,11 @@
 body {
   height: 100vh;
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: auto 1fr auto;
   grid-template-rows: auto 1fr auto;
   grid-template-areas:
     "header header"
-    "sidebar main"
+    "sidebar main hall"
     "footer footer";
   background: var(--bg-light);
   color: var(--text-dark);
@@ -61,6 +61,24 @@ header {
    =========================== */
 #redirection {
   grid-area: main;
+  background: var(--bg-card);
+  margin: 20px;
+  padding: 30px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+/* ===========================
+   Hall of Fame
+   =========================== */
+
+#hall_of_fame {
+  grid-area: hall;
   background: var(--bg-card);
   margin: 20px;
   padding: 30px;

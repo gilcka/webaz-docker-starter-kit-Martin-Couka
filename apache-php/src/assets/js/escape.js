@@ -1,11 +1,31 @@
+//Importation de la couche chaleur
+
+var heatmapLayer = L.tileLayer.wms('http://localhost:8080/geoserver/escape_chaleur/wms', {
+    layers: 'escape_chaleur:chaleur',
+    format: 'image/png',
+    transparent: true,
+    version: '1.1.1',
+    attribution: 'Geoserver',
+    crs: L.CRS.EPSG4326,
+    filed:true
+});
+
+var heatMapVisible = false;
+
+function toggleHeatmap() {
+    if (heatMapVisible) {
+        map.removeLayer(heatmapLayer);
+        heatMapVisible = false;
+    } else {
+        heatmapLayer.addTo(map);
+        heatMapVisible = true;
+    }
+}
+
 //Coordonnées de l'ENSG
 
 var ensgLat = 48.8414;
 var ensgLon = 2.5874;
-
-var telLat = 48.840379;
-var telLon = 2.588558;
-
 
 //Creation de l'emprise
 
@@ -66,36 +86,45 @@ var inventaire = [];
 
 //Ajout sur la carte de tous les objets du sac de Louise qui sont disponibles en permanence, à un niveau de zoom très bas : test avec le téléphone, à automatiser via une base de données
 
-for (let i = 0; i <= 8; i++) {
-    // Code à exécuter
+var marqueurs = [];
+
+for (let i = 0; i < objets.length; i++) {
+    let objet = objets[i];
+
+    let lat = parseFloat(objet.lat);
+    let lon = parseFloat(objet.lon);
+
+    let marker = L.marker([lat, lon], {
+        icon: L.divIcon({
+            className: 'invisible-marker',
+            html: ''
+        })
+    }).addTo(map);
+
+    marker.bindTooltip(objet.name, {
+        permanent: true,
+        direction: 'center',
+        className: 'label-' + objet.name.toLowerCase().replace(/\s+/g, '-')
+    }).openTooltip();
+
+    marker.on('click', function() {
+        if (!inventaire.includes(objet.name)) {
+            inventaire.push(objet.name);
+            ajouterObjetInventaire(objet.name, objet.image);
+            map.removeLayer(marker);
+        }
+    });
+
+    marqueurs.push({
+        marker: marker,
+        objet: objet
+    });
 }
 
-var markerTelephone = L.marker([telLat, telLon], {
-    icon: L.divIcon({
-        className: 'invisible-marker',
-        html: ''
-    })
-}).addTo(map);
-
-markerTelephone.bindTooltip("Téléphone", {
-    permanent: true,
-    direction: 'center',
-    className: 'label-telephone'
-}).openTooltip();
-
-//Puis ajout dans l'inventaire quand le joueur clique dessus
-
-markerTelephone.on('click', function() {
-    if (!inventaire.includes('téléphone')) {
-        inventaire.push('téléphone');               
-        ajouterObjetInventaire('téléphone', 'images/telephone.jpg');       
-        map.removeLayer(markerTelephone);
-    }
-});
-
 function ajouterObjetInventaire(nomObjet, imageUrl) {
-    var cases = document.querySelectorAll('aside > div');
-    
+    // On cible les cases réelles dans l'inventaire
+    var cases = document.querySelectorAll('aside .inventaire > div');
+
     for (var i = 0; i < cases.length; i++) {
         var texteCase = cases[i].textContent.trim();
         if (texteCase === '' || texteCase === 'Élément ' + (i+1)) {
@@ -113,19 +142,32 @@ function ajouterObjetInventaire(nomObjet, imageUrl) {
     }
 }
 
+// Gestion du zoom pour tous les marqueurs
 map.on('zoomend', function() {
-    if (map.getZoom() >= 19 && !inventaire.includes('téléphone')) {
-        if (!map.hasLayer(markerTelephone)) {
-            markerTelephone.addTo(map);
-        }
-    } else {
-        if (map.hasLayer(markerTelephone)) {
-            map.removeLayer(markerTelephone);
+    var zoomActuel = map.getZoom();
+    
+    for (var i = 0; i < marqueurs.length; i++) {
+        var item = marqueurs[i];
+        var marker = item.marker;
+        var objet = item.objet;
+        
+        // Afficher le marqueur si le zoom est suffisant et l'objet pas encore récupéré
+        if (zoomActuel >= objet.zoom && !inventaire.includes(objet.name)) {
+            if (!map.hasLayer(marker)) {
+                marker.addTo(map);
+            }
+        } else {
+            if (map.hasLayer(marker)) {
+                map.removeLayer(marker);
+            }
         }
     }
 });
-if (map.getZoom() < 19) {
-    map.removeLayer(markerTelephone);
+
+// Initialisation : masquer les marqueurs dont le zoom n'est pas suffisant
+for (var i = 0; i < marqueurs.length; i++) {
+    if (map.getZoom() < marqueurs[i].objet.zoom) {
+        map.removeLayer(marqueurs[i].marker);
+    }
 }
 
-//Ajout sur la carte des gens que le joueur doit aller voir, qui s'affichent différemment selon les étapes du jeu

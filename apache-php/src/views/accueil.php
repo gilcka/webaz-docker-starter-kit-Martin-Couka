@@ -17,7 +17,7 @@
         <p id = 'paragraphe1'>
             OUAIS LA TEEEEAAAAAAMM, Louise Vadeaudeau est encore en train de courir partout comme à TOUTES les soirées ENSG.
             Jerôme Abientôt veut que vous la rameniez chez elle, sauf que faut choper tout son stuff qui est éparpillé partout 
-            dans un rayon de 1km autour de l'ENSG. Les objets de son sac à récupérer sont les suivantes : 
+            dans un rayon de 1km autour de l'ENSG. Les objets à récupérer sont les suivantes : 
         </p>
         <ul id = 'liste_objets'>
             <li>Son téléphone</li>
