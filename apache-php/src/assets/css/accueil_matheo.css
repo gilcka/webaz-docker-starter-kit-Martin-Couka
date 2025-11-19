@@ -1,60 +1,130 @@
-body {
+/* ===========================
+   Variables et styles globaux
+   =========================== */
+:root {
+  --primary: #4CAF50;
+  --bg-light: #f5f5f5;
+  --bg-card: #ffffff;
+  --text-dark: #222;
+  --radius: 12px;
+  --shadow: 0 4px 12px rgba(0,0,0,0.08);
+  --transition: 0.3s ease;
+}
+
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, Arial, sans-serif;
+}
+
+body {
   height: 100vh;
   display: grid;
-  grid-template-columns: auto 1fr; 
-  grid-template-rows: auto 1fr auto; 
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr auto;
   grid-template-areas:
     "header header"
     "sidebar main"
     "footer footer";
+  background: var(--bg-light);
+  color: var(--text-dark);
 }
 
+/* ===========================
+   Header
+   =========================== */
 header {
   grid-area: header;
-  background-color: #4CAF50;
+  background: var(--primary);
   color: white;
   text-align: center;
   padding: 20px;
+  font-size: 1.6rem;
+  font-weight: 600;
 }
 
-#redirection {
-  grid-area: main;
-  display : flex;
-  justify-content: center;
-  align-items: center;
-  grid-template-rows: auto auto auto;
-  padding: 10px;
-  background-color: #ddd;
-}
-
+/* ===========================
+   Sidebar (Matheo)
+   =========================== */
 #matheo {
   grid-area: sidebar;
-  margin: 30px;
-  padding: 10px;
-  background-color: #ddd;
-
+  background: var(--bg-card);
+  margin: 20px;
+  padding: 20px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
 
+/* ===========================
+   Main Zone (Redirection)
+   =========================== */
+#redirection {
+  grid-area: main;
+  background: var(--bg-card);
+  margin: 20px;
+  padding: 30px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+/* ===========================
+   Footer (Voir Jules)
+   =========================== */
 #voir_Jules {
   grid-area: footer;
   display: flex;
-  align-items: flex-end; /* Aligne en bas */
-  justify-content: center; /* Centre horizontalement */
-  margin-top: 15px;
-  padding-bottom: 30px; /* Espace depuis le bas */
+  justify-content: center;
+  padding: 25px 0;
 }
 
 #voir_Jules a {
-  display: inline-block;
   padding: 15px 40px;
-  background-color: #4CAF50;
+  background: var(--primary);
   color: white;
   text-decoration: none;
-  font-size: 20px;
-  font-weight: bold;
-  border-radius: 8px;
-  transition: background-color 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: var(--radius);
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+}
+
+#voir_Jules a:hover {
+  background: #3d9644;
+  transform: translateY(-2px);
+}
+
+/* ===========================
+   Responsive
+   =========================== */
+@media (max-width: 850px) {
+  body {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "main"
+      "sidebar"
+      "footer";
+  }
+
+  #matheo {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 550px) {
+  header {
+    font-size: 1.3rem;
+  }
+
+  #voir_Jules a {
+    width: 80%;
+    text-align: center;
+  }
 }
