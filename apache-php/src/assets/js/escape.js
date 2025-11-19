@@ -81,8 +81,9 @@ markerJules.bindPopup(`
 `);
 
 //Initialisation de l'inventaire
-
-var inventaire = [];
+// On stocke les ids récupérés et le nombre par nom
+var inventaireIds = new Set();
+var inventaireCounts = {}; // { 'Nom': count }
 
 //Ajout sur la carte de tous les objets du sac de Louise qui sont disponibles en permanence, à un niveau de zoom très bas : test avec le téléphone, à automatiser via une base de données
 
@@ -108,9 +109,11 @@ for (let i = 0; i < objets.length; i++) {
     }).openTooltip();
 
     marker.on('click', function() {
-        if (!inventaire.includes(objet.name)) {
-            inventaire.push(objet.name);
-            ajouterObjetInventaire(objet.name, objet.image);
+        var oid = String(objet.id);
+        if (!inventaireIds.has(oid)) {
+            inventaireIds.add(oid);
+            inventaireCounts[objet.name] = (inventaireCounts[objet.name] || 0) + 1;
+            ajouterObjetInventaire(objet.name, objet.image, inventaireCounts[objet.name]);
             map.removeLayer(marker);
         }
     });
@@ -121,20 +124,28 @@ for (let i = 0; i < objets.length; i++) {
     });
 }
 
-function ajouterObjetInventaire(nomObjet, imageUrl) {
-    // On cible les cases réelles dans l'inventaire
+function ajouterObjetInventaire(nomObjet, imageUrl, count) {
     var cases = document.querySelectorAll('aside .inventaire > div');
+
+    var existing = document.querySelector('aside .inventaire > div[data-name="' + nomObjet + '"]');
+    if (existing) {
+        var badge = existing.querySelector('.count-badge');
+        if (badge) badge.textContent = count;
+        return;
+    }
 
     for (var i = 0; i < cases.length; i++) {
         var texteCase = cases[i].textContent.trim();
         if (texteCase === '' || texteCase === 'Élément ' + (i+1)) {
+            cases[i].dataset.name = nomObjet;
             cases[i].innerHTML = `
                 <div style="display: flex; 
                      flex-direction: column; 
                      align-items: center; 
-                     justify-content: center;">
+                     justify-content: center; position: relative;">
                     <img src="${imageUrl}" alt="${nomObjet}" style="width: 60px; height: 60px; object-fit: contain; margin-bottom: 5px;">
                     <p style="margin: 0; font-size: 12px; font-weight: bold;">${nomObjet}</p>
+                    <span class="count-badge" style="position: absolute; top: 4px; right: 8px; background:#222; color:#fff; padding:2px 6px; border-radius:10px; font-size:12px;">${count}</span>
                 </div>
             `;
             break;
@@ -142,7 +153,6 @@ function ajouterObjetInventaire(nomObjet, imageUrl) {
     }
 }
 
-// Gestion du zoom pour tous les marqueurs
 map.on('zoomend', function() {
     var zoomActuel = map.getZoom();
     
@@ -151,8 +161,7 @@ map.on('zoomend', function() {
         var marker = item.marker;
         var objet = item.objet;
         
-        // Afficher le marqueur si le zoom est suffisant et l'objet pas encore récupéré
-        if (zoomActuel >= objet.zoom && !inventaire.includes(objet.name)) {
+        if (zoomActuel >= objet.zoom && !inventaireIds.has(String(objet.id))) {
             if (!map.hasLayer(marker)) {
                 marker.addTo(map);
             }
@@ -164,7 +173,6 @@ map.on('zoomend', function() {
     }
 });
 
-// Initialisation : masquer les marqueurs dont le zoom n'est pas suffisant
 for (var i = 0; i < marqueurs.length; i++) {
     if (map.getZoom() < marqueurs[i].objet.zoom) {
         map.removeLayer(marqueurs[i].marker);

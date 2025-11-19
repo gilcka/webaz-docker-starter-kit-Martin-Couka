@@ -38,8 +38,8 @@ Flight::route('/escape', function () {
     // Connexion BDD
     $link = pg_connect("host=$host port=$port dbname=$dbname user=$user password=$pass");
 
-    // Récupérer latitude/longitude séparément (loc est un geometry)
-    $sql = "SELECT name, image, zoom, ST_Y(loc) AS lat, ST_X(loc) AS lon FROM objets;";
+    // Récupérer l'id et latitude/longitude séparément (loc est un geometry)
+    $sql = "SELECT id, name, image, zoom, ST_Y(loc) AS lat, ST_X(loc) AS lon FROM objets;";
     $query = pg_query($link, $sql);
     $objets = pg_fetch_all($query);
     if (!$objets) {
