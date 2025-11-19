@@ -11,8 +11,10 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
     crossorigin=""></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
 </head>
 <body>
+  <div id="jeu">
   <header>
     <h1>LOUISE VADEAUDEAU</h1>
     <h4><i>Baladez-vous et zoomez sur la carte pour trouver les objets dans la zone rouge</i></h4>
@@ -39,9 +41,10 @@
 
   <div id = "chaleur">
     <label>
-      <input type="checkbox" id = "carte_chaleur" onchange="toggleHeatmap()">
+      <input type="checkbox" id = "carte_chaleur" @change="toggleHeatmap()">
       Calor
     </label>
+  </div>
   </div>
 
   <script>
