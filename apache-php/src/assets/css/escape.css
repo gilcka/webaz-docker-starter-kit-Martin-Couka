@@ -2,6 +2,12 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
+  overflow: hidden;
+}
+
+/* Le conteneur Vue qui englobe tout */
+#jeu {
+  height: 100vh;
   display: grid;
   grid-template-columns: 150px 1fr; 
   grid-template-rows: 110px 1fr; 
@@ -16,7 +22,7 @@ header {
   background-color: #4CAF50;
   color: white;
   text-align: center;
-  padding: 0;
+  padding: 10px;
 }
 
 /* Colonne Inventaire en bas à gauche */
@@ -27,6 +33,7 @@ aside {
   height: 100%;
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
 }
 
 /* Titre de l'inventaire */
@@ -37,6 +44,7 @@ aside {
   text-align: center;
   font-size: 18px;
   border-radius: 5px 5px 0 0;
+  flex-shrink: 0;
 }
 
 /* Grille des cases d'inventaire */
@@ -44,6 +52,8 @@ aside {
   display: grid;
   grid-template-rows: repeat(5, 1fr);
   flex-grow: 1;
+  gap: 5px;
+  padding-top: 5px;
 }
 
 /* Style des cases dans la grille d'inventaire */
@@ -70,13 +80,26 @@ main {
   grid-area: main;
   padding: 10px;
   background-color: #ddd;
+  position: relative;
+  overflow: hidden;
 }
-
 
 /* La carte prend toute la hauteur de la zone main */
 #map { 
   height: 100%; 
   width: 100%;
+}
+
+/* Bouton chaleur */
+#chaleur {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: white;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  z-index: 1000;
 }
 
 .invisible-marker {

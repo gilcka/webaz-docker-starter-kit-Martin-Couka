@@ -1,5 +1,3 @@
-
-
 Vue.createApp({
     data() {
         return {
@@ -9,38 +7,40 @@ Vue.createApp({
             marqueurs: [],
             inventaireIds: new Set(),
             inventaireCounts: {},
-            map: null, // ← Ajoute ça
+            map: null,
             heatmapLayer: null,
             heatMapVisible: false
         }
     },
+
     mounted() {
         this.initialisationCarte();
-        this.creerHeatmapLayer(); // ← On le crée ICI
+        this.creerHeatmapLayer();
     },
+
     methods: {
         initialisationCarte() {
-            this.map = L.map('map').setView([this.ensgLat,this.ensgLon], 15);
+            this.map = L.map('map').setView([this.ensgLat, this.ensgLon], 15);
 
             L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 19,
-            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-            }).addTo(map);
+                maxZoom: 19,
+                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+            }).addTo(this.map);
 
             var rectangle = L.rectangle([
-            [this.ensgLat - this.emprise, this.ensgLon - this.emprise], 
-            [this.ensgLat + this.emprise, this.ensgLon + this.emprise]  
+                [this.ensgLat - this.emprise, this.ensgLon - this.emprise], 
+                [this.ensgLat + this.emprise, this.ensgLon + this.emprise]  
             ], {
                 color: 'red',        
                 fillColor: 'red',    
                 fillOpacity: 0.2,    
                 weight: 3            
-            }).addTo(map);
+            }).addTo(this.map);
 
             this.ajouterMarqueurJules();
-
             this.ajouterObjetsCarte();
-            },
+        },
+
         creerHeatmapLayer() {
             this.heatmapLayer = L.tileLayer.wms('http://localhost:8080/geoserver/escape_chaleur/wms', {
                 layers: 'escape_chaleur:chaleur',
@@ -51,13 +51,14 @@ Vue.createApp({
                 crs: L.CRS.EPSG4326
             });
         },
+
         ajouterMarqueurJules() {
             var markerJules = L.marker([this.ensgLat, this.ensgLon], {
                 icon: L.divIcon({
-                className: 'invisible-marker', // Pas d'icône visible
-                html: ''
+                    className: 'invisible-marker',
+                    html: ''
                 })
-            }).addTo(map);
+            }).addTo(this.map);
 
             markerJules.bindTooltip("Jules", {
                 permanent: true,
@@ -76,6 +77,7 @@ Vue.createApp({
                 </div>
             `);
         },
+
         ajouterObjetInventaire(nomObjet, imageUrl, count) {
             var cases = document.querySelectorAll('aside .inventaire > div');
 
@@ -104,10 +106,12 @@ Vue.createApp({
                 }
             }
         },
+
         ajouterObjetsCarte() {
+            const self = this;
+
             for (let i = 0; i < objets.length; i++) {
                 let objet = objets[i];
-
                 let lat = parseFloat(objet.lat);
                 let lon = parseFloat(objet.lon);
 
@@ -126,11 +130,11 @@ Vue.createApp({
 
                 marker.on('click', function() {
                     var oid = String(objet.id);
-                    if (!this.inventaireIds.has(oid)) {
-                        this.inventaireIds.add(oid);
-                        this.inventaireCounts[objet.name] = (this.inventaireCounts[objet.name] || 0) + 1;
-                        this.ajouterObjetInventaire(objet.name, objet.image, this.inventaireCounts[objet.name]);
-                        this.map.removeLayer(marker);
+                    if (!self.inventaireIds.has(oid)) {
+                        self.inventaireIds.add(oid);
+                        self.inventaireCounts[objet.name] = (self.inventaireCounts[objet.name] || 0) + 1;
+                        self.ajouterObjetInventaire(objet.name, objet.image, self.inventaireCounts[objet.name]);
+                        self.map.removeLayer(marker);
                     }
                 });
 
@@ -138,35 +142,37 @@ Vue.createApp({
                     marker: marker,
                     objet: objet
                 });
+            }
 
+            // Gestion du zoom
+            this.map.on('zoomend', function() {
+                var zoomActuel = self.map.getZoom();
                 
-                this.map.on('zoomend', () => {
-                    var zoomActuel = this.map.getZoom();
+                for (var j = 0; j < self.marqueurs.length; j++) {
+                    var item = self.marqueurs[j];
+                    var marker = item.marker;
+                    var objet = item.objet;
                     
-                    for (var i = 0; i < this.marqueurs.length; i++) {
-                        var item = this.marqueurs[i];
-                        var marker = item.marker;
-                        var objet = item.objet;
-                        
-                        if (zoomActuel >= objet.zoom && !this.inventaireIds.has(String(objet.id))) {
-                            if (!this.map.hasLayer(marker)) {
-                                marker.addTo(this.map);
-                            }
-                        } else {
-                            if (this.map.hasLayer(marker)) {
-                                this.map.removeLayer(marker);
-                            }
+                    if (zoomActuel >= objet.zoom && !self.inventaireIds.has(String(objet.id))) {
+                        if (!self.map.hasLayer(marker)) {
+                            marker.addTo(self.map);
+                        }
+                    } else {
+                        if (self.map.hasLayer(marker)) {
+                            self.map.removeLayer(marker);
                         }
                     }
-                });
+                }
+            });
 
-                for (var i = 0; i < this.marqueurs.length; i++) {
-                    if (this.map.getZoom() < this.marqueurs[i].objet.zoom) {
-                        this.map.removeLayer(this.marqueurs[i].marker);
-                    }
+            // Masquer les marqueurs en dessous du zoom initial
+            for (var k = 0; k < this.marqueurs.length; k++) {
+                if (this.map.getZoom() < this.marqueurs[k].objet.zoom) {
+                    this.map.removeLayer(this.marqueurs[k].marker);
                 }
             }
         },
+
         toggleHeatmap() {
             if (this.heatMapVisible) {
                 this.map.removeLayer(this.heatmapLayer);
@@ -175,6 +181,6 @@ Vue.createApp({
                 this.heatmapLayer.addTo(this.map);
                 this.heatMapVisible = true;
             }
-        },
+        }
     }
 }).mount('#jeu');
