@@ -165,18 +165,18 @@ Vue.createApp({
         },
 
         poserQuestion(personne) {
-            let reponse = prompt(personne.question);
+            let reponse = prompt(personne.message);
             if (reponse === null) return;
 
             if (reponse.trim() == personne.reponse) {
 
                 alert("Bonne réponse ma vie");
 
-                this.ajouterObjetInventaire({
-                    name: personne.name,
-                    image: personne.image,
-                    count: 1,
-                });
+            this.ajouterObjetInventaire(
+                personne.reponse,
+                personne.image,
+                1
+            );
 
             } else {
                 alert("Mauvaise réponse chatoune");
