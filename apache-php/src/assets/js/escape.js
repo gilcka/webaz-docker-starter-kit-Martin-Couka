@@ -39,6 +39,7 @@ Vue.createApp({
 
             this.ajouterMarqueurJules();
             this.ajouterObjetsCarte();
+            this.ajouterPersonnesCarte();
         },
 
         creerHeatmapLayer() {
@@ -105,6 +106,82 @@ Vue.createApp({
                     break;
                 }
             }
+        },
+
+        ajouterPersonnesCarte() {
+            const self = this;
+
+            personnes.sort((a, b) => a.ordre_apparition - b.ordre_apparition);
+
+            for (let i = 0; i < personnes.length; i++) {
+                let personne = personnes[i];
+                let lat = parseFloat(personne.lat);
+                let lon = parseFloat(personne.lon);
+
+                let marker = L.marker([lat, lon], {
+                    icon: L.divIcon({
+                        className: 'invisible-marker',
+                        html: ''
+                    })
+                }).addTo(this.map);
+
+                marker.bindTooltip(personne.name, {
+                    permanent: true,
+                    direction: 'center',
+                    className: 'label-' + personne.name.toLowerCase().replace(/\s+/g, '-')
+                }).openTooltip();
+
+                marker.on('click', () => {
+                    this.poserQuestion(personne);
+                });
+            }
+
+            this.map.on('zoomend', function() {
+                var zoomActuel = self.map.getZoom();
+                
+                for (var j = 0; j < self.marqueurs.length; j++) {
+                    var item = self.marqueurs[j];
+                    var marker = item.marker;
+                    var personne = item.personne;
+                    
+                    if (zoomActuel >= personne.zoom && !self.inventaireIds.has(String(personne.id))) {
+                        if (!self.map.hasLayer(marker)) {
+                            marker.addTo(self.map);
+                        }
+                    } else {
+                        if (self.map.hasLayer(marker)) {
+                            self.map.removeLayer(marker);
+                        }
+                    }
+                }
+            });
+
+            // Masquer les marqueurs en dessous du zoom initial
+            for (var k = 0; k < this.marqueurs.length; k++) {
+                if (this.map.getZoom() < this.marqueurs[k].personne.zoom) {
+                    this.map.removeLayer(this.marqueurs[k].marker);
+                }
+            }
+        },
+
+        poserQuestion(personne) {
+            let reponse = prompt(personne.question);
+            if (reponse === null) return;
+
+            if (reponse.trim() == personne.reponse) {
+
+                alert("Bonne réponse ma vie");
+
+                this.ajouterObjetInventaire({
+                    name: personne.name,
+                    image: personne.image,
+                    count: 1,
+                });
+
+            } else {
+                alert("Mauvaise réponse chatoune");
+            }      
+
         },
 
         ajouterObjetsCarte() {

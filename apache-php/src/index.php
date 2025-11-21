@@ -40,25 +40,17 @@ Flight::route('/escape', function () {
     $user = 'postgres';
     $pass = 'postgres';
 
-    // Connexion BDD
     $link = pg_connect("host=$host port=$port dbname=$dbname user=$user password=$pass");
 
-    // Récupérer l'id et latitude/longitude séparément (loc est un geometry)
     $sql_objets = "SELECT id, name, image, zoom, ST_Y(loc) AS lat, ST_X(loc) AS lon FROM objets;";
     $query_objets = pg_query($link, $sql_objets);
-    $objets = pg_fetch_all($query_objets);
-    if (!$objets) {
-        $objets = [];
-    }
+    $results_objets = pg_fetch_all($query_objets);
 
-    $sql_personnes = "SELECT id, name, message, ordre_apparition, zoom, ST_Y(loc) AS lat, ST_X(loc) AS lon FROM personnes;";
+    $sql_personnes = "SELECT id, name, message, reponse, zoom, ordre_apparition, image, ST_Y(loc) AS lat, ST_X(loc) AS lon FROM personnes;";
     $query_personnes = pg_query($link, $sql_personnes);
-    $personnes = pg_fetch_all($query_personnes);
-    if (!$personnes) {
-        $personnes = [];
-    }
+    $results_personnes = pg_fetch_all($query_personnes);
 
-    Flight::render('escape', ['objets' => $objets, 'personnes' => $personnes]);
+    Flight::render('escape', ['objets' => $results_objets, 'personnes' => $results_personnes]);
 });
 
 Flight::start();
