@@ -38,6 +38,7 @@ Vue.createApp({
             }).addTo(this.map);
 
             this.ajouterMarqueurJules();
+            this.ajouterMarqueurGilles();
             this.ajouterObjetsCarte();
             this.ajouterPersonnesCarte();
         },
@@ -72,15 +73,15 @@ Vue.createApp({
                     <h3>Rappel des cibles</h3>
                     <ul>
                         <li>Ramasser les 5 objets que Louise a laissé tomber de son sac,</li> 
-                        <li>trouver le code de sa résidence,</li>
-                        <li>trouver ses clés de maison en échange de potins numériques</li>
+                        <li>Trouver le code de sa résidence en répondant à 4 questions,</li>
+                        <li>Dealer ses clés de maison en échange de 3 bouteilles de Jaeger à Gilles Grocaka qui est caché dans son endroit préféré du campus...</li>
                     </ul>
                 </div>
             `);
         },
 
         ajouterMarqueurGilles() {
-            var markerGilles = L.marker([this.ensgLat, this.ensgLon], {
+            var markerGilles = L.marker([48.84033827337177, 2.590845797231987], {
                 icon: L.divIcon({
                     className: 'invisible-marker',
                     html: ''
