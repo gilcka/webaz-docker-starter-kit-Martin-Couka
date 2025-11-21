@@ -61,7 +61,7 @@ Vue.createApp({
                 })
             }).addTo(this.map);
 
-            markerJules.bindTooltip("Jules", {
+            markerJules.bindTooltip("Jules ADSL", {
                 permanent: true,
                 direction: 'center',
                 className: 'label-jules'
@@ -78,6 +78,28 @@ Vue.createApp({
                 </div>
             `);
         },
+
+        ajouterMarqueurGilles() {
+            var markerGilles = L.marker([this.ensgLat, this.ensgLon], {
+                icon: L.divIcon({
+                    className: 'invisible-marker',
+                    html: ''
+                })
+            }).addTo(this.map);
+
+            markerGilles.bindTooltip("Gilles Grocaka", {
+                permanent: true,
+                direction: 'center',
+                className: 'label-gilles'
+            }).openTooltip();
+
+            markerGilles.bindPopup(`
+                <div style="max-width: 200px;">
+                    <h2>LIBEREZ LE JAEGER</h2>
+                </div>
+            `);
+        },
+
 
         ajouterObjetInventaire(nomObjet, imageUrl, count) {
             var cases = document.querySelectorAll('aside .inventaire > div');

@@ -19,9 +19,9 @@ INSERT INTO objets (name, image, zoom, loc) VALUES
 ('Marinière', 'images/mariniere.jpg', 19, ST_SetSRID(ST_MakePoint(2.580884, 48.836886), 4326)),
 ('Portefeuille', 'images/portefeuille.jpg', 19, ST_SetSRID(ST_MakePoint(2.59038, 48.833976), 4326)),
 ('Sac à main', 'images/sac.jpg', 19, ST_SetSRID(ST_MakePoint(2.585031, 48.846772), 4326)),
-('Bouteille de JaegerMeister', 'images/jaeger.jpg', 19, ST_SetSRID(ST_MakePoint(2.583864379,48.8459606), 4326)),
-('Bouteille de JaegerMeister', 'images/jaeger.jpg', 19, ST_SetSRID(ST_MakePoint(2.580235745,48.8482698), 4326)),
-('Bouteille de JaegerMeister', 'images/jaeger.jpg', 19, ST_SetSRID(ST_MakePoint(2.590833511,48.8370957), 4326));
+('Bouteille de Jaeger', 'images/jaeger.jpg', 19, ST_SetSRID(ST_MakePoint(2.583864379,48.8459606), 4326)),
+('Bouteille de Jaeger', 'images/jaeger.jpg', 19, ST_SetSRID(ST_MakePoint(2.580235745,48.8482698), 4326)),
+('Bouteille de Jaeger', 'images/jaeger.jpg', 19, ST_SetSRID(ST_MakePoint(2.590833511,48.8370957), 4326));
 
 
 -- On fait pareil avec les gens avec qui il faut parler
