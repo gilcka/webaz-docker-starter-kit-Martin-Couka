@@ -37,12 +37,13 @@ CREATE TABLE personnes (
     name TEXT, 
     question TEXT,
     reponse INT,
+    zoom INT, 
     ordre_apparition INT,
     loc geometry(Point, 4326)
 );
 
 INSERT INTO personnes (name, message, ordre_apparition, loc) VALUES
-('Killian Grosfront', 'Combien de fois on a gagné le trophée Descartes ?', 5, 1, ST_SetSRID(ST_MakePoint(2.5925794002506253,48.839409302967056), 4326)),
-('Magali Carreaux', 'Combien a coûté la réparation de la fenêtre (en milliers d’euros) ?', 8, 2, ST_SetSRID(ST_MakePoint(2.58192261198548,48.843495838070886), 4326)),
-('Clara Bourbier', 'Combien de contrôles de présence ont eu les it2 depuis le début de l’année ?', 4, 3, ST_SetSRID(ST_MakePoint(2.587200720208837,48.83942860331999), 4326)),
-('Diego Posédanssabagnole', 'Combien de parrains a Tom Cacadur ?', 7, 4, ST_SetSRID(ST_MakePoint(2.585891112457032,48.844299902248146), 4326));
+('Killian Grosfront', 'Combien de fois on a gagné le trophée Descartes ?', 5, 1, 17, ST_SetSRID(ST_MakePoint(2.5925794002506253,48.839409302967056), 4326)),
+('Magali Carreaux', 'Combien a coûté la réparation de la fenêtre (en milliers d’euros) ?', 8, 2, 17, ST_SetSRID(ST_MakePoint(2.58192261198548,48.843495838070886), 4326)),
+('Clara Bourbier', 'Combien de contrôles de présence ont eu les it2 depuis le début de l’année ?', 4, 3, 17, ST_SetSRID(ST_MakePoint(2.587200720208837,48.83942860331999), 4326)),
+('Diego Posédanssabagnole', 'Combien de parrains a Tom Cacadur ?', 7, 4, 17, ST_SetSRID(ST_MakePoint(2.585891112457032,48.844299902248146), 4326));
