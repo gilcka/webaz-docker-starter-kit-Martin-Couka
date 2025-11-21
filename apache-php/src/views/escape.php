@@ -49,6 +49,7 @@
 
   <script>
     var objets = <?php echo json_encode($objets ?? []); ?>;
+    var personnes = <?php echo json_encode($personnes ?? []); ?>;
   </script>
 
   <script src="assets/js/escape.js"></script>
