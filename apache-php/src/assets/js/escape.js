@@ -6,6 +6,7 @@ Vue.createApp({
             emprise: 0.009,
             marqueursPersonnes: [],
             marqueursObjets: [],
+            marqueurGilles : [],
             inventaireIds: new Set(),
             inventaireCounts: {},
             inventaireIdToName: {},
@@ -72,17 +73,19 @@ Vue.createApp({
 
             markerJules.bindPopup(`
                 <div style="max-width: 200px;">
-                    <h3>Rappel des cibles</h3>
+                    <h3>CONSEIL : effectuez toutes ces étapes dans l'ordre indiqué</h3>
                     <ul>
                         <li>Ramasser les 5 objets que Louise a laissé tomber de son sac,</li> 
-                        <li>Trouver le code de sa résidence en répondant à 4 questions,</li>
                         <li>Dealer ses clés de maison en échange de 3 bouteilles de Jaeger à Gilles Grocaka qui est caché dans son endroit préféré du campus...</li>
+                        <li>Trouver le code de sa résidence en répondant à 4 questions,</li>
                     </ul>
                 </div>
             `);
         },
 
         ajouterMarqueurGilles() {
+            const self = this;
+
             var markerGilles = L.marker([48.84033827337177, 2.590845797231987], {
                 icon: L.divIcon({
                     className: 'invisible-marker',
@@ -97,6 +100,24 @@ Vue.createApp({
             }).openTooltip();
 
             markerGilles._zoom = 19;
+
+            this.map.on('zoomend', function () {
+                var zoomActuel = self.map.getZoom();
+
+                if (zoomActuel >= markerGilles._zoom) {
+                    if (!self.map.hasLayer(markerGilles)) {
+                        markerGilles.addTo(self.map);
+                    }
+                } else {
+                    if (self.map.hasLayer(markerGilles)) {
+                        self.map.removeLayer(markerGilles);
+                    }
+                }
+            });
+            
+            if (this.map.getZoom() < markerGilles._zoom) {
+                this.map.removeLayer(markerGilles);
+            }
 
             // ✔ Fonction fléchée = this = Vue !
             markerGilles.on('click', () => {
@@ -163,14 +184,11 @@ Vue.createApp({
         },
 
         retirerObjetInventaire(nomObjet) {
-            // Supprime une seule instance de l'objet `nomObjet` de l'inventaire.
             if (!nomObjet) return false;
 
-            // Trouver la case d'inventaire correspondante
             var existing = document.querySelector('aside .inventaire > div[data-name="' + nomObjet + '"]');
             if (!existing) return false;
 
-            // Décrémente le compteur interne
             var current = (this.inventaireCounts && this.inventaireCounts[nomObjet]) ? this.inventaireCounts[nomObjet] : 0;
             if (current > 1) {
                 var next = current - 1;
@@ -178,13 +196,11 @@ Vue.createApp({
                 var badge = existing.querySelector('.count-badge');
                 if (badge) badge.textContent = next;
             } else {
-                // supprime la case
                 existing.removeAttribute('data-name');
-                existing.innerHTML = 'Élément ' + (Array.prototype.indexOf.call(existing.parentNode.children, existing) + 1);
+                existing.innerHTML = '';
                 if (this.inventaireCounts && this.inventaireCounts[nomObjet] !== undefined) delete this.inventaireCounts[nomObjet];
             }
 
-            // Supprimer un id associé (si on en a enregistré)
             try {
                 for (var id in this.inventaireIdToName) {
                     if (!Object.prototype.hasOwnProperty.call(this.inventaireIdToName, id)) continue;
