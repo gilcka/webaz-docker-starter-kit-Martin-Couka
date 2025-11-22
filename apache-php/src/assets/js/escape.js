@@ -150,6 +150,17 @@ Vue.createApp({
 
                 alert("Gilles : ok ma gueule, tiens les clés");
 
+                //Ajout des clés dans l'inventaire
+                let nomCles = "Clés";
+                let imageCles = "images/cles_maison.jpg";
+
+                this.inventaireCounts[nomCles] = (this.inventaireCounts[nomCles] || 0) + 1;
+
+                this.ajouterObjetInventaire(
+                    nomCles,
+                    imageCles,
+                    this.inventaireCounts[nomCles]
+                );
             });
         },
 
