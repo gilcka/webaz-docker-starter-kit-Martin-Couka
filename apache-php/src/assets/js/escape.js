@@ -47,6 +47,39 @@ Vue.createApp({
             this.ajouterObjetsCarte();
         },
 
+        testFin() {
+            // Vérifie que l’inventaire est présent et bien structuré
+            if (!this.inventaireCounts || typeof this.inventaireCounts !== "object") {
+                console.error("Inventaire incorrect");
+                return;
+            }
+
+            // Comptage total des objets
+            const totalObjets = Object.values(this.inventaireCounts)
+                .reduce((sum, v) => sum + v, 0);
+
+            console.log("Objets dans l'inventaire :", totalObjets);
+
+            // Vérification finale : 7 objets
+            if (totalObjets < 7) {
+                alert(`Il te manque encore des objets !  
+        Tu en as ${totalObjets}/7.`);
+                return;
+            }
+
+            // Demande du code final
+            let code = prompt("Entrez le code de la résidence :");
+
+            if (code === null) return; // Annulation
+
+            if (code.trim() === "5784") {
+                alert("BRAVO, Louise est tirée du fossé de la parcelle Y grâce à toi");
+            } else {
+                alert("Mauvais code chacal, indice : ORDRE D'APPARITION");
+            }
+        },
+
+
         creerHeatmapLayer() {
             this.heatmapLayer = L.tileLayer.wms('http://localhost:8080/geoserver/escape_chaleur/wms', {
                 layers: 'escape_chaleur:chaleur',
@@ -100,9 +133,9 @@ Vue.createApp({
                 className: 'label-gilles'
             }).openTooltip();
 
-            markerGilles._zoom = 19;
+            markerGilles._zoom = 15;
 
-            this.map.on('zoomend', function () {
+            this.map.on('zoomstart', function () {
                 var zoomActuel = self.map.getZoom();
 
                 if (zoomActuel >= markerGilles._zoom) {
@@ -292,7 +325,6 @@ Vue.createApp({
 
         déclencherApparitionPersonnes() {
             this.ajouterPersonnesCarte(); // On crée tous les marqueurs, invisibles
-            console.log("personnes ajoutées");
             this.afficherProchainePersonne();
         },
 
@@ -346,7 +378,7 @@ Vue.createApp({
             }
 
             // Gestion du zoom
-            this.map.on('zoomend', function() {
+            this.map.on('zoomstart', function() {
                 var zoomActuel = self.map.getZoom();
                 
                 for (var j = 0; j < self.marqueursObjets.length; j++) {

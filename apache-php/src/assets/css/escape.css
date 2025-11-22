@@ -1,141 +1,234 @@
-body {
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  overflow: hidden;
+/* =========================================================
+   VARIABLES GLOBALES
+   ========================================================= */
+:root {
+  --primary: #4CAF50;
+  --accent: #FF5722;
+  --bg-light: #f5f5f5;
+  --bg-card: #ffffff;
+  --bg-soft: #f4f4f4;
+  --text-dark: #222;
+  --radius: 12px;
+  --shadow: 0 4px 12px rgba(0,0,0,0.12);
+  --shadow-soft: 0 2px 6px rgba(0,0,0,0.15);
+  --transition: 0.3s ease;
 }
 
-/* Le conteneur Vue qui englobe tout */
+/* Reset + base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, Arial, sans-serif;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  background: var(--bg-light);
+  color: var(--text-dark);
+}
+
+/* =========================================================
+   STRUCTURE DU JEU
+   ========================================================= */
 #jeu {
   height: 100vh;
   display: grid;
-  grid-template-columns: 150px 1fr; 
-  grid-template-rows: 110px 1fr; 
+  grid-template-columns: 180px 1fr;
+  grid-template-rows: 110px 1fr;
   grid-template-areas:
     "header header"
     "sidebar main";
+  gap: 0;
 }
 
-/* Barre du haut */
-header {
-  grid-area: header;
-  background-color: #4CAF50;
-  color: white;
-  text-align: center;
-  padding: 10px;
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+header { 
+  grid-area: header; 
+  background: var(--primary); 
+  color: white; 
+  text-align: center; 
+  padding: 20px; 
+  font-size: 1.5rem; 
+  font-weight: 600; 
+  letter-spacing: 0.5px;
 }
 
-/* Colonne Inventaire en bas à gauche */
+header .banniere {
+  display: flex;
+  justify-content: space-between; /* Titre à gauche, bouton à droite */
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+header .banniere h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+header .banniere button {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+header .banniere button:hover {
+  background: #e64a19; /* couleur plus foncée au survol */
+}
+
+.header-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.header-buttons button {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.header-buttons button:hover {
+  background: #e64a19;
+}
+
+/* =========================================================
+   INVENTAIRE (SIDEBAR)
+   ========================================================= */
 aside {
   grid-area: sidebar;
-  background-color: #f4f4f4;
-  padding: 10px;
-  height: 100%;
+  background: var(--bg-soft);
+  padding: 15px;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
+  border-right: 2px solid rgba(0,0,0,0.05);
 }
 
-/* Titre de l'inventaire */
 .titre_inventaire {
-  background-color: #4CAF50;
-  color: white;
-  padding: 15px;
+  background: var(--primary);
+  color: #fff;
+  padding: 12px;
   text-align: center;
-  font-size: 18px;
-  border-radius: 5px 5px 0 0;
-  flex-shrink: 0;
+  font-size: 1.1rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 12px;
 }
 
-/* Grille des cases d'inventaire */
+/* Grille des items */
 .inventaire {
   display: grid;
   grid-template-rows: repeat(5, 1fr);
+  gap: 10px;
   flex-grow: 1;
-  gap: 5px;
-  padding-top: 5px;
 }
 
-/* Style des cases dans la grille d'inventaire */
 .inventaire > div {
-  background-color: #ccc;
-  border: 1px solid #aaa;
-  padding: 5px;
-  text-align: center;
+  background: var(--bg-card);
+  border: 1px solid #ddd;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  padding: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 80px;
+  transition: var(--transition);
+}
+
+.inventaire > div:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
 }
 
 .inventaire > div p {
   margin: 0;
-  font-size: 14px;
-  font-weight: bold;
-  color: #333;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-dark);
 }
 
-/* La carte en bas à droite */
+/* =========================================================
+   ZONE DE LA CARTE
+   ========================================================= */
 main {
   grid-area: main;
+  background: #ddd;
   padding: 10px;
-  background-color: #ddd;
   position: relative;
   overflow: hidden;
+  border-top: 2px solid rgba(0,0,0,0.05);
 }
 
-/* La carte prend toute la hauteur de la zone main */
-#map { 
-  height: 100%; 
+#map {
+  height: 100%;
   width: 100%;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
 
-/* Bouton chaleur */
+/* =========================================================
+   BOUTON HEATMAP
+   ========================================================= */
 #chaleur {
   position: absolute;
   bottom: 20px;
   right: 20px;
-  background: white;
-  padding: 10px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-  z-index: 1000;
+  padding: 12px 16px;
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: var(--transition);
+  font-weight: 600;
 }
 
+#chaleur:hover {
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   MARQUEURS INVISIBLES
+   ========================================================= */
 .invisible-marker {
-    background: transparent;
-    border: none;
+  background: transparent !important;
+  border: none !important;
 }
 
-.label-jules {
-    background-color: rgb(231, 121, 139);
-    border: 2px solid #4CAF50;
-    border-radius: 5px;
-    padding: 5px 10px;
-    font-weight: bold;
-    color: #333;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-    cursor: pointer;
-}
-
-.label-gilles {
-    background-color: rgb(231, 121, 139);
-    border: 2px solid #4CAF50;
-    border-radius: 5px;
-    padding: 5px 10px;
-    font-weight: bold;
-    color: #333;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-    cursor: pointer;
+/* =========================================================
+   LABELS PERSONNALISÉS CARTE
+   (mêmes styles, juste couleurs variables)
+   ========================================================= */
+.label-jules,
+.label-gilles,
+.label-telephone {
+  padding: 6px 12px;
+  border-radius: var(--radius);
+  font-weight: bold;
+  color: var(--text-dark);
+  box-shadow: var(--shadow-soft);
+  cursor: pointer;
+  border: 2px solid var(--primary);
+  background: rgb(231, 121, 139);
 }
 
 .label-telephone {
-    background-color: white;
-    border: 2px solid #FF5722;
-    border-radius: 5px;
-    padding: 5px 10px;
-    font-weight: bold;
-    color: #333;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-    cursor: pointer;
+  border-color: var(--accent);
+  background: white;
 }

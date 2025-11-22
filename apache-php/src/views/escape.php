@@ -16,8 +16,14 @@
 <body>
   <div id="jeu">
   <header>
+    <div id='banniere'>
     <h1>LOUISE VADEAUDEAU</h1>
-    <h4><i>Baladez-vous et zoomez sur la carte pour trouver les objets dans la zone rouge</i></h4>
+    <div id='boutons'>
+    <button id="btn-fin" @click="testFin">Fin</button>
+    <button id="btn-calor" @click="toggleHeatmap()">Calor</button>
+    </div>
+    </div>
+    <p style='font-style: italic; font-weight: normal; font-size: 1rem;'><i>Baladez-vous et zoomez sur la carte pour trouver les objets dans la zone rouge</i></p>
   </header>
 
 <aside>
@@ -39,12 +45,6 @@
     <div id="map"></div>
   </main>
 
-  <div id = "chaleur">
-    <label>
-      <input type="checkbox" id = "carte_chaleur" @change="toggleHeatmap()">
-      Calor
-    </label>
-  </div>
   </div>
 
   <script>

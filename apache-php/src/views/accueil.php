@@ -17,7 +17,7 @@
         <p id = 'paragraphe1'>
             OUAIS LA TEEEEAAAAAAMM, Louise Vadeaudeau est encore en train de courir partout comme à TOUTES les soirées ENSG.
             Jerôme Abientôt veut que vous la rameniez chez elle, sauf que faut choper tout son stuff qui est éparpillé partout 
-            dans un rayon de 1km autour de l'ENSG. Les objets à récupérer sont les suivantes : 
+            dans un rayon de 1km autour de l'ENSG. Les objets à récupérer sont les suivants : 
         </p>
         <ul id = 'liste_objets'>
             <li>Son téléphone</li>
@@ -31,6 +31,7 @@
             mais il vous faut également rassembler <b>4 chiffres</b> en discutant avec 4 personnes différentes qui correspondent au code d'entrée de sa résidence.
             Dès que vous aurez récupéré un élément, vous le confierez à Louisa Mémaud qui le gardera précieusement en attendant que vous ayez tout rassemblé.
         </p>
+        <p>Vu que Louise Vadeaudeau est connue pour ses épisodes de sprint sur la parcelle Y, vous serez bien sur chronométrés et aurez peut-être la chance </p>
     </div>
 
     <div id='jouer'>
