@@ -12,7 +12,9 @@ Vue.createApp({
             inventaireIdToName: {},
             map: null,
             heatmapLayer: null,
-            heatMapVisible: false
+            heatMapVisible: false,
+            prochainePersonneIndex: 0,
+            clesRecuperees: false,
         }
     },
 
@@ -43,7 +45,6 @@ Vue.createApp({
             this.ajouterMarqueurJules();
             this.ajouterMarqueurGilles();
             this.ajouterObjetsCarte();
-            this.ajouterPersonnesCarte();
         },
 
         creerHeatmapLayer() {
@@ -76,7 +77,7 @@ Vue.createApp({
                     <h3>CONSEIL : effectuez toutes ces étapes dans l'ordre indiqué</h3>
                     <ul>
                         <li>Ramasser les 5 objets que Louise a laissé tomber de son sac,</li> 
-                        <li>Dealer ses clés de maison en échange de 3 bouteilles de Jaeger à Gilles Grocaka qui est caché dans son endroit préféré du campus...</li>
+                        <li>Dealer ses clés de maison en échange de 3 bouteilles de Jaeger à Gilles Grocaka qui est surement enterré sous un pont comme le gros clochard de merde qu'il est</li>
                         <li>Trouver le code de sa résidence en répondant à 4 questions,</li>
                     </ul>
                 </div>
@@ -86,7 +87,7 @@ Vue.createApp({
         ajouterMarqueurGilles() {
             const self = this;
 
-            var markerGilles = L.marker([48.84033827337177, 2.590845797231987], {
+            var markerGilles = L.marker([48.84335867841065, 2.585990833909156], {
                 icon: L.divIcon({
                     className: 'invisible-marker',
                     html: ''
@@ -126,7 +127,6 @@ Vue.createApp({
                 var ok = window.confirm("LIBEREZ LE JAEGER");
                 if (!ok) return;
 
-                // Récupération correcte
                 var noms = Object.keys(vm.inventaireCounts || {}).filter(n =>
                     n.toLowerCase().includes('jaeger')
                 );
@@ -139,7 +139,6 @@ Vue.createApp({
                     return;
                 }
 
-                // Retrait des bouteilles (3)
                 let reste = 3;
                 for (let n of noms) {
                     while (vm.inventaireCounts[n] > 0 && reste > 0) {
@@ -149,6 +148,9 @@ Vue.createApp({
                 }
 
                 alert("Gilles : ok ma gueule, tiens les clés");
+
+                this.clesRecuperees = true;
+                this.déclencherApparitionPersonnes();
 
                 //Ajout des clés dans l'inventaire
                 let nomCles = "Clés";
@@ -227,13 +229,11 @@ Vue.createApp({
         },
 
         ajouterPersonnesCarte() {
-            const self = this;
-
+            // Trier les personnes par ordre
             personnes.sort((a, b) => a.ordre_apparition - b.ordre_apparition);
 
             for (let i = 0; i < personnes.length; i++) {
                 let personne = personnes[i];
-
                 let lat = parseFloat(personne.lat);
                 let lon = parseFloat(personne.lon);
 
@@ -242,53 +242,27 @@ Vue.createApp({
                         className: 'invisible-marker',
                         html: ''
                     })
-                }).addTo(this.map);
+                });
 
                 marker.bindTooltip(personne.name, {
                     permanent: true,
                     direction: 'center',
                     className: 'label-' + personne.name.toLowerCase().replace(/\s+/g, '-')
-                }).openTooltip();
-
-                marker.on('click', () => {
-                    this.poserQuestion(personne);
                 });
 
+                marker.on('click', () => {
+                    this.poserQuestion(personne, marker);
+                });
+
+                // On stocke mais on n'ajoute PAS sur la carte
                 this.marqueursPersonnes.push({
                     marker: marker,
                     personne: personne
                 });
             }
-
-            this.map.on('zoomend', function() {
-                var zoomActuel = self.map.getZoom();
-                
-                for (var j = 0; j < self.marqueursPersonnes.length; j++) {
-                    var item = self.marqueursPersonnes[j];
-                    var marker = item.marker;
-                    var personne = item.personne;
-                    
-                    if (zoomActuel >= personne.zoom && !self.inventaireIds.has(String(personne.id))) {
-                        if (!self.map.hasLayer(marker)) {
-                            marker.addTo(self.map);
-                        }
-                    } else {
-                        if (self.map.hasLayer(marker)) {
-                            self.map.removeLayer(marker);
-                        }
-                    }
-                }
-            });
-
-            // Masquer les marqueurs en dessous du zoom initial
-            for (var k = 0; k < this.marqueursPersonnes.length; k++) {
-                if (this.map.getZoom() < this.marqueursPersonnes[k].personne.zoom) {
-                    this.map.removeLayer(this.marqueursPersonnes[k].marker);
-                }
-            }
         },
 
-        poserQuestion(personne) {
+        poserQuestion(personne, marker) {
             let reponse = prompt(personne.message);
             if (reponse === null) return;
 
@@ -296,18 +270,42 @@ Vue.createApp({
 
                 alert("Bonne réponse ma vie");
 
+                // Donne l'objet
                 this.ajouterObjetInventaire(
                     personne.reponse,
                     personne.image,
                     1
                 );
 
-                this.removeLayer(personne.marker);
+                // Supprime la personne trouvée
+                this.map.removeLayer(marker);
+
+                // Passe à la suivante
+                this.prochainePersonneIndex++;
+                this.afficherProchainePersonne();
 
             } else {
                 alert("Mauvaise réponse chatoune");
-            }      
+            }  
 
+        },
+
+        déclencherApparitionPersonnes() {
+            this.ajouterPersonnesCarte(); // On crée tous les marqueurs, invisibles
+            console.log("personnes ajoutées");
+            this.afficherProchainePersonne();
+        },
+
+
+        afficherProchainePersonne() {
+            if (!this.clesRecuperees) return;
+
+            if (this.prochainePersonneIndex >= this.marqueursPersonnes.length) return;
+
+            let item = this.marqueursPersonnes[this.prochainePersonneIndex];
+
+            // Ajouter le marker sur la carte
+            item.marker.addTo(this.map);
         },
 
         ajouterObjetsCarte() {

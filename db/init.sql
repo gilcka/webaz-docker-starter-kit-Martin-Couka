@@ -43,4 +43,4 @@ INSERT INTO personnes (name, message, reponse, zoom, ordre_apparition, image, lo
 ('Killian Grosfront', 'Combien de fois on a gagné le trophée Descartes ?', 5, 19, 1, 'images/5.jpg',ST_SetSRID(ST_MakePoint(2.5925794002506253,48.839409302967056), 4326)),
 ('Magali Carreaux', 'Combien a coûté la réparation de la fenêtre (en milliers d’euros) ?', 8, 19, 2,'images/8.jpg', ST_SetSRID(ST_MakePoint(2.58192261198548,48.843495838070886), 4326)),
 ('Clara Bourbier', 'Combien de contrôles de présence ont eu les it2 depuis le début de l’année ?', 4, 19, 3, 'images/4.jpg', ST_SetSRID(ST_MakePoint(2.587200720208837,48.83942860331999), 4326)),
-('Diego Posédanssabagnole', 'Combien de parrains a Tom Cacadur ?', 7, 19, 4, 'images/7.jpg', ST_SetSRID(ST_MakePoint(2.585891112457032,48.844299902248146), 4326));
+('Diego Posédanssabagnole', 'Combien de parrains a Tom Cacadur ?', 7, 18, 4, 'images/7.jpg', ST_SetSRID(ST_MakePoint(2.585891112457032,48.844299902248146), 4326));
