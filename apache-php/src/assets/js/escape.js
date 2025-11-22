@@ -98,29 +98,38 @@ Vue.createApp({
 
             markerGilles._zoom = 19;
 
-            markerGilles.on('click', function() {
+            // ✔ Fonction fléchée = this = Vue !
+            markerGilles.on('click', () => {
                 var vm = this;
-                var ok = window.confirm("LIBEREZ LE JAEGER");
 
+                var ok = window.confirm("LIBEREZ LE JAEGER");
                 if (!ok) return;
 
-                var nom = Object.keys(vm.inventaireCounts || {}).filter(n => n && n.toLowerCase().includes('jaeger'));
-                var nbrJaeger = nom.reduce((s, n) => s + (vm.inventaireCounts[n] || 0), 0);
+                // Récupération correcte
+                var noms = Object.keys(vm.inventaireCounts || {}).filter(n =>
+                    n.toLowerCase().includes('jaeger')
+                );
+
+                var nbrJaeger = noms.reduce((sum, n) =>
+                    sum + (vm.inventaireCounts[n] || 0), 0);
+
                 if (nbrJaeger < 3) {
                     window.alert("Pas assez de bouteilles ma pépette");
                     return;
                 }
 
-                let but = 3;
-                for (let i = 0; i < nom.length && but > 0; i++) {
-                    var n = nom[i];
-                    while ((vm.inventaireCounts[n] || 0) > 0 && but > 0) {
+                // Retrait des bouteilles (3)
+                let reste = 3;
+                for (let n of noms) {
+                    while (vm.inventaireCounts[n] > 0 && reste > 0) {
                         vm.retirerObjetInventaire(n);
-                        but--;
+                        reste--;
                     }
                 }
-            });
 
+                alert("Gilles : ok ma gueule, tiens les clés");
+
+            });
         },
 
 
