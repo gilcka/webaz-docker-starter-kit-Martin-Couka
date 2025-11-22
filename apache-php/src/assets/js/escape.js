@@ -7,6 +7,7 @@ Vue.createApp({
             marqueurs: [],
             inventaireIds: new Set(),
             inventaireCounts: {},
+            inventaireIdToName: {},
             map: null,
             heatmapLayer: null,
             heatMapVisible: false
@@ -88,17 +89,37 @@ Vue.createApp({
                 })
             }).addTo(this.map);
 
-            markerGilles.bindTooltip("Gilles Grocaka", {
+            markerGilles.bindTooltip('Gilles Grocaka', {
                 permanent: true,
                 direction: 'center',
                 className: 'label-gilles'
             }).openTooltip();
 
-            markerGilles.bindPopup(`
-                <div style="max-width: 200px;">
-                    <h2>LIBEREZ LE JAEGER</h2>
-                </div>
-            `);
+            markerGilles._zoom = 19;
+
+            markerGilles.on('click', function() {
+                var vm = this;
+                var ok = window.confirm("LIBEREZ LE JAEGER");
+
+                if (!ok) return;
+
+                var nom = Object.keys(vm.inventaireCounts || {}).filter(n => n && n.toLowerCase().includes('jaeger'));
+                var nbrJaeger = nom.reduce((s, n) => s + (vm.inventaireCounts[n] || 0), 0);
+                if (nbrJaeger < 3) {
+                    window.alert("Pas assez de bouteilles ma pépette");
+                    return;
+                }
+
+                let but = 3;
+                for (let i = 0; i < nom.length && but > 0; i++) {
+                    var n = nom[i];
+                    while ((vm.inventaireCounts[n] || 0) > 0 && but > 0) {
+                        vm.retirerObjetInventaire(n);
+                        but--;
+                    }
+                }
+            });
+
         },
 
 
@@ -129,6 +150,43 @@ Vue.createApp({
                     break;
                 }
             }
+        },
+
+        retirerObjetInventaire(nomObjet) {
+            // Supprime une seule instance de l'objet `nomObjet` de l'inventaire.
+            if (!nomObjet) return false;
+
+            // Trouver la case d'inventaire correspondante
+            var existing = document.querySelector('aside .inventaire > div[data-name="' + nomObjet + '"]');
+            if (!existing) return false;
+
+            // Décrémente le compteur interne
+            var current = (this.inventaireCounts && this.inventaireCounts[nomObjet]) ? this.inventaireCounts[nomObjet] : 0;
+            if (current > 1) {
+                var next = current - 1;
+                this.inventaireCounts[nomObjet] = next;
+                var badge = existing.querySelector('.count-badge');
+                if (badge) badge.textContent = next;
+            } else {
+                // supprime la case
+                existing.removeAttribute('data-name');
+                existing.innerHTML = 'Élément ' + (Array.prototype.indexOf.call(existing.parentNode.children, existing) + 1);
+                if (this.inventaireCounts && this.inventaireCounts[nomObjet] !== undefined) delete this.inventaireCounts[nomObjet];
+            }
+
+            // Supprimer un id associé (si on en a enregistré)
+            try {
+                for (var id in this.inventaireIdToName) {
+                    if (!Object.prototype.hasOwnProperty.call(this.inventaireIdToName, id)) continue;
+                    if (this.inventaireIdToName[id] === nomObjet) {
+                        if (this.inventaireIds && this.inventaireIds.has(String(id))) this.inventaireIds.delete(String(id));
+                        delete this.inventaireIdToName[id];
+                        break;
+                    }
+                }
+            } catch (e) { /* ignore */ }
+
+            return true;
         },
 
         ajouterPersonnesCarte() {

@@ -24,9 +24,9 @@ body {
   grid-template-columns: auto 1fr auto;
   grid-template-rows: auto 1fr auto;
   grid-template-areas:
-    "header header"
+    "header header header"
     "sidebar main hall"
-    "footer footer";
+    "footer footer footer";
   background: var(--bg-light);
   color: var(--text-dark);
 }
