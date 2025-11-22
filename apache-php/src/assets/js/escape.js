@@ -4,7 +4,8 @@ Vue.createApp({
             ensgLat: 48.8414,
             ensgLon: 2.5862,
             emprise: 0.009,
-            marqueurs: [],
+            marqueursPersonnes: [],
+            marqueursObjets: [],
             inventaireIds: new Set(),
             inventaireCounts: {},
             inventaireIdToName: {},
@@ -196,6 +197,7 @@ Vue.createApp({
 
             for (let i = 0; i < personnes.length; i++) {
                 let personne = personnes[i];
+
                 let lat = parseFloat(personne.lat);
                 let lon = parseFloat(personne.lon);
 
@@ -215,13 +217,18 @@ Vue.createApp({
                 marker.on('click', () => {
                     this.poserQuestion(personne);
                 });
+
+                this.marqueursPersonnes.push({
+                    marker: marker,
+                    personne: personne
+                });
             }
 
             this.map.on('zoomend', function() {
                 var zoomActuel = self.map.getZoom();
                 
-                for (var j = 0; j < self.marqueurs.length; j++) {
-                    var item = self.marqueurs[j];
+                for (var j = 0; j < self.marqueursPersonnes.length; j++) {
+                    var item = self.marqueursPersonnes[j];
                     var marker = item.marker;
                     var personne = item.personne;
                     
@@ -238,9 +245,9 @@ Vue.createApp({
             });
 
             // Masquer les marqueurs en dessous du zoom initial
-            for (var k = 0; k < this.marqueurs.length; k++) {
-                if (this.map.getZoom() < this.marqueurs[k].personne.zoom) {
-                    this.map.removeLayer(this.marqueurs[k].marker);
+            for (var k = 0; k < this.marqueursPersonnes.length; k++) {
+                if (this.map.getZoom() < this.marqueursPersonnes[k].personne.zoom) {
+                    this.map.removeLayer(this.marqueursPersonnes[k].marker);
                 }
             }
         },
@@ -253,11 +260,13 @@ Vue.createApp({
 
                 alert("Bonne réponse ma vie");
 
-            this.ajouterObjetInventaire(
-                personne.reponse,
-                personne.image,
-                1
-            );
+                this.ajouterObjetInventaire(
+                    personne.reponse,
+                    personne.image,
+                    1
+                );
+
+                this.removeLayer(personne.marker);
 
             } else {
                 alert("Mauvaise réponse chatoune");
@@ -296,7 +305,7 @@ Vue.createApp({
                     }
                 });
 
-                this.marqueurs.push({
+                this.marqueursObjets.push({
                     marker: marker,
                     objet: objet
                 });
@@ -306,8 +315,8 @@ Vue.createApp({
             this.map.on('zoomend', function() {
                 var zoomActuel = self.map.getZoom();
                 
-                for (var j = 0; j < self.marqueurs.length; j++) {
-                    var item = self.marqueurs[j];
+                for (var j = 0; j < self.marqueursObjets.length; j++) {
+                    var item = self.marqueursObjets[j];
                     var marker = item.marker;
                     var objet = item.objet;
                     
@@ -324,9 +333,9 @@ Vue.createApp({
             });
 
             // Masquer les marqueurs en dessous du zoom initial
-            for (var k = 0; k < this.marqueurs.length; k++) {
-                if (this.map.getZoom() < this.marqueurs[k].objet.zoom) {
-                    this.map.removeLayer(this.marqueurs[k].marker);
+            for (var k = 0; k < this.marqueursObjets.length; k++) {
+                if (this.map.getZoom() < this.marqueursObjets[k].objet.zoom) {
+                    this.map.removeLayer(this.marqueursObjets[k].marker);
                 }
             }
         },
