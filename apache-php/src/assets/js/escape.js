@@ -128,7 +128,7 @@ Vue.createApp({
                             // Redirection vers la page d'accueil
                             window.location.href = '/';
                         }              
-                                  
+
                         fetch('/api/joueurs')
                         .then(r => r.json())
                         .then(joueurs => {
@@ -487,7 +487,7 @@ Vue.createApp({
             }
 
             // Gestion du zoom
-            this.map.on('zoomstart', function() {
+            this.map.on('zoomend', function() {
                 var zoomActuel = self.map.getZoom();
                 
                 for (var j = 0; j < self.marqueursObjets.length; j++) {
@@ -514,6 +514,10 @@ Vue.createApp({
                 }
             }
         },
+
+        afficherIndice() {
+            
+        }
 
         toggleHeatmap() {
             if (this.heatMapVisible) {

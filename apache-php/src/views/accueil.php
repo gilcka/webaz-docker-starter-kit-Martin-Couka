@@ -32,6 +32,9 @@
             Dès que vous aurez récupéré un élément, vous le confierez à Louisa Mémaud qui le gardera précieusement en attendant que vous ayez tout rassemblé.
         </p>
         <p>Vu que Louise Vadeaudeau est connue pour ses épisodes de sprint sur la parcelle Y, vous serez bien sur chronométrés et aurez peut-être la chance d'intégrer le Hall of Fame qui compte les meilleurs joueurs de votre génération.</p>
+        <p>Une fois que vous avez récupéré tous les objets, et que vous avez toutes les composantes du code de sa résidence, le bouton rouge en haut à gauche vous permettra de valider votre partie.</p>
+        <p><b>PS : </b>Jules Adsl est présent en permanence sur la carte pour vous réexpliquer les consignes.</p>
+        <p style="font-weight: bold; color: red; text-align: center;">BONNE CHANCE A VOUS</p>
     </div>
 
     <div id='jouer'>

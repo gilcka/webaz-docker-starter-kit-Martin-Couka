@@ -87,26 +87,61 @@ Flight::route('GET /api/personnes', function () {
     return;
     }
 
-    $objets = pg_fetch_all($requete);
+    $personnes = pg_fetch_all($requete);
     pg_close($link);
 
-    Flight::json($objets);
+    Flight::json($personnes);
     return;
     }
 
     $sql = "SELECT id, name, message, reponse, indice_fin, zoom, ordre_apparition, image, ST_Y(loc) AS lat, ST_X(loc) AS lon FROM personnes WHERE id = $1";
 
     $requete = pg_query_params($link, $sql, [$id]);
-    $objet = pg_fetch_all($requete, PGSQL_ASSOC);
+    $personne = pg_fetch_all($requete, PGSQL_ASSOC);
     pg_close($link);
 
-    Flight::json($objet ?: ['error' => 'aucun objet ne corresond à cet id']);
+    Flight::json($personne ?: ['error' => 'aucun objet ne corresond à cet id']);
 });
+
+//API INDICES
+Flight::route('GET /api/indices', function () {
+
+    $link = Flight::get('connexion_db');
+
+    $id = Flight::request()->query['id'] ?? null;
+
+    if (!$id) {
+
+    $sql = "SELECT id, objet_id, indice FROM indices;";
+
+    $requete = pg_query($link, $sql);
+
+    if (!$requete) {
+    Flight::json(['error' => 'erreur requete'], 500);
+    return;
+    }
+
+    $indices = pg_fetch_all($requete);
+    pg_close($link);
+
+    Flight::json($indices);
+    return;
+    }
+
+    $sql = "SELECT id, objet_id, indice FROM indices WHERE id = $1";
+
+    $requete = pg_query_params($link, $sql, [$id]);
+    $indice = pg_fetch_all($requete, PGSQL_ASSOC);
+    pg_close($link);
+
+    Flight::json($indice ?: ['error' => 'aucun objet ne corresond à cet id']);
+});
+
 
 //API JOUEURS
 Flight::route('POST /api/joueurs', function() {
     $link = Flight::get('connexion_db');
-    // récupère les infos données par l'utilisateur
+
     $donneesFin = Flight::request();
 
     $nom = $donneesFin->data->nom ?? '';
@@ -120,8 +155,6 @@ Flight::route('POST /api/joueurs', function() {
     $requete = pg_query_params($link, $sql, [$nom, $temps]);
 
     if ($requete) {
-    // si la requête marche bien
-    // on sort le résultat de la requête sous forme de tableau json
     $resultat = pg_fetch_all($requete, PGSQL_ASSOC);
     Flight::json(['success' => true, 'id' => ($resultat && isset($resultat[0]['id'])) ? $resultat[0]['id'] : null]);
     } else {
