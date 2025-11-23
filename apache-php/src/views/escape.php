@@ -16,30 +16,40 @@
 <body>
   <div id="jeu">
   <header>
-    <div id='banniere'>
+    <div class='banniere'>
+
     <h1>LOUISE VADEAUDEAU</h1>
-    <div id='boutons'>
+
+    <div id="chrono">{{ chronoAffichage }}</div>
+
+    <div class ='header-buttons'>
     <button id="btn-fin" @click="testFin">Fin</button>
-    <button id="btn-calor" @click="toggleHeatmap()">Calor</button>
+    <label>
+      <input type="checkbox" id = "carte_chaleur" @change="toggleHeatmap()">
+      Calor
+    </label>
+
     </div>
     </div>
     <p style='font-style: italic; font-weight: normal; font-size: 1rem;'><i>Baladez-vous et zoomez sur la carte pour trouver les objets dans la zone rouge</i></p>
   </header>
 
-<aside>
-    <div class="titre_inventaire"><b>Louisa Mémaud</b></div>
-    <div class="inventaire">
-        <div><!-- Case 1 vide --></div>
-        <div><!-- Case 2 vide --></div>
-        <div><!-- Case 3 vide --></div>
-        <div><!-- Case 4 vide --></div>
-        <div><!-- Case 5 vide --></div>
-        <div><!-- Case 5 vide --></div>
-        <div><!-- Case 5 vide --></div>
-        <div><!-- Case 5 vide --></div>
-        <div><!-- Case 5 vide --></div>
-    </div>
-</aside>
+  <aside>
+      <div class="titre_inventaire"><b>Louisa Mémaud</b></div>
+      <div class="inventaire">
+          <div><!-- Case 1 vide --></div>
+          <div><!-- Case 1 vide --></div>
+          <div><!-- Case 1 vide --></div>
+          <div><!-- Case 2 vide --></div>
+          <div><!-- Case 3 vide --></div>
+          <div><!-- Case 4 vide --></div>
+          <div><!-- Case 5 vide --></div>
+          <div><!-- Case 5 vide --></div>
+          <div><!-- Case 5 vide --></div>
+          <div><!-- Case 5 vide --></div>
+          <div><!-- Case 5 vide --></div>
+      </div>
+  </aside>
 
   <main>
     <div id="map"></div>

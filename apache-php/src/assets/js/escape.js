@@ -4,6 +4,14 @@ Vue.createApp({
             ensgLat: 48.8414,
             ensgLon: 2.5862,
             emprise: 0.009,
+            chrono: {
+                secondes: 0,
+                minutes: 0,
+                heures: 0,
+                intervalId: null,
+                estEnCours: false,
+            },
+            chronoAffichage: '00:00:00',
             marqueursPersonnes: [],
             marqueursObjets: [],
             marqueurGilles : [],
@@ -21,6 +29,8 @@ Vue.createApp({
     mounted() {
         this.initialisationCarte();
         this.creerHeatmapLayer();
+
+        this.demarrerChrono();
     },
 
     methods: {
@@ -72,13 +82,54 @@ Vue.createApp({
 
             if (code === null) return; // Annulation
 
-            if (code.trim() === "5784") {
+            if (code.trim() === "5847") {
                 alert("BRAVO, Louise est tirée du fossé de la parcelle Y grâce à toi");
+                this.arreterChrono();
             } else {
                 alert("Mauvais code chacal, indice : ORDRE D'APPARITION");
             }
         },
 
+        demarrerChrono() {
+            if (!this.chrono.estEnCours) {
+                this.chrono.estEnCours = true;
+                this.chrono.intervalId = setInterval(() => {
+                    this.chrono.secondes++;
+
+                    if (this.chrono.secondes >= 60) {
+                        this.chrono.secondes = 0;
+                        this.chrono.minutes++;
+                    }
+
+                    if (this.chrono.minutes >= 60) {
+                        this.chrono.minutes = 0;
+                        this.chrono.heures++;
+                    }
+
+                    this.afficherChrono();
+                }, 1000);
+            }
+        },
+
+        arreterChrono() {
+            if (this.chrono.estEnCours) {
+                this.chrono.estEnCours = false;
+
+                // On arrête l'intervalle si il existe
+                if (this.chrono.intervalId) {
+                    clearInterval(this.chrono.intervalId);
+                    this.chrono.intervalId = null;
+                }
+            }
+        },
+
+        afficherChrono() {
+            var h = this.chrono.heures < 10 ? '0' + this.chrono.heures : this.chrono.heures;
+            var m = this.chrono.minutes < 10 ? '0' + this.chrono.minutes : this.chrono.minutes;
+            var s = this.chrono.secondes < 10 ? '0' + this.chrono.secondes : this.chrono.secondes;
+
+            this.chronoAffichage = `${h}:${m}:${s}`;
+        },
 
         creerHeatmapLayer() {
             this.heatmapLayer = L.tileLayer.wms('http://localhost:8080/geoserver/escape_chaleur/wms', {

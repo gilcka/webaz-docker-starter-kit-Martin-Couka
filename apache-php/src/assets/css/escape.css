@@ -60,36 +60,27 @@ header {
 
 header .banniere {
   display: flex;
-  justify-content: space-between; /* Titre à gauche, bouton à droite */
+  justify-content: space-between; 
   align-items: center;
-  margin-bottom: 10px;
+  width: 100%;
+  position: relative;
 }
+
 
 header .banniere h1 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#chrono {
   font-size: 1.5rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  margin: 0;
+  font-weight: bold;
 }
 
-header .banniere button {
-  background: var(--accent);
-  color: #fff;
-  border: none;
-  border-radius: var(--radius);
-  padding: 8px 16px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: var(--transition);
-}
-
-header .banniere button:hover {
-  background: #e64a19; /* couleur plus foncée au survol */
-}
-
-.header-buttons {
-  display: flex;
-  gap: 10px;
+#chrono {
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .header-buttons button {
@@ -97,6 +88,7 @@ header .banniere button:hover {
   color: #fff;
   border: none;
   border-radius: var(--radius);
+  margin: 10px;
   padding: 8px 16px;
   cursor: pointer;
   font-weight: 600;
