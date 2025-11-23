@@ -23,6 +23,7 @@ Vue.createApp({
             heatMapVisible: false,
             prochainePersonneIndex: 0,
             clesRecuperees: false,
+            indiceDejaLu: {},
         }
     },
 
@@ -30,11 +31,13 @@ Vue.createApp({
 
         Promise.all([
             fetch('/api/objets').then(r => r.json()),
-            fetch('/api/personnes').then(r => r.json())
-        ]).then(([objets, personnes]) => {
+            fetch('/api/personnes').then(r => r.json()),
+            fetch('/api/indices').then(r => r.json())
+        ]).then(([objets, personnes, indices]) => {
 
             this.objets = objets;
             this.personnes = personnes;
+            this.indices = indices;
 
             this.initialisationCarte();
             this.creerHeatmapLayer();
@@ -242,7 +245,7 @@ Vue.createApp({
                 className: 'label-gilles'
             }).openTooltip();
 
-            markerGilles._zoom = 15;
+            markerGilles._zoom = 18;
 
             this.map.on('zoomstart', function () {
                 var zoomActuel = self.map.getZoom();
@@ -371,7 +374,7 @@ Vue.createApp({
         },
 
         ajouterPersonnesCarte() {
-            // Trier les personnes par ordre
+
             this.personnes.sort((a, b) => a.ordre_apparition - b.ordre_apparition);
 
             for (let i = 0; i < this.personnes.length; i++) {
@@ -516,8 +519,26 @@ Vue.createApp({
         },
 
         afficherIndice() {
-            
-        }
+            if (!Array.isArray(this.indices) || this.indices.length === 0) {
+                alert('Aucun indice disponible.');
+                return;
+            }
+
+            this.indices.sort((a, b) => a.objet_id - b.objet_id);
+
+            for (let i = 0; i < this.indices.length; i++) {
+                const indice = this.indices[i];
+                const key = String(indice.objet_id);
+                if (!this.indiceDejaLu[key]) {
+                    this.indiceDejaLu[key] = true;
+                    console.log(`Objet ID ${indice.objet_id} : Indice - ${indice.indice}`);
+                    alert(indice.indice);
+                    return;
+                }
+            }
+
+            alert('Tu as déjà vu tous les indices disponibles.');
+        },
 
         toggleHeatmap() {
             if (this.heatMapVisible) {

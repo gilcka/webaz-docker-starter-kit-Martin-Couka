@@ -79,6 +79,18 @@ header .banniere h1 {
   margin: 10px;
 }
 
+.chrono button {
+  margin-left: 15px;
+  padding: 6px 12px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
 .header-buttons button {
   background: var(--accent);
   color: #fff;

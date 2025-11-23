@@ -21,7 +21,8 @@
     <h1>LOUISE VADEAUDEAU</h1>
 
     <div class="chrono">
-      {{ chronoAffichage }}     
+      {{ chronoAffichage }}
+      <button @click="afficherIndice">Indice</button>     
     </div>
 
     <div class ='header-buttons'>
@@ -33,7 +34,7 @@
 
     </div>
     </div>
-    <p style='font-style: italic; font-weight: normal; font-size: 1rem;'><i>Baladez-vous et zoomez sur la carte pour trouver les objets dans la zone rouge, et Louise Vadeaudeau elle-même</i></p>
+    <p style='font-style: italic; font-weight: normal; font-size: 1rem;'><i>Baladez-vous et zoomez sur la carte pour trouver les objets dans la zone rouge, ainsi que Louise Vadeaudeau elle-même</i></p>
   </header>
 
   <aside>
