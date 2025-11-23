@@ -91,6 +91,61 @@ header {
   gap: 20px;
 }
 
+.scores-list {
+    list-style: none;
+    width: 100%;
+    max-width: 350px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.score-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--bg-light);
+    padding: 12px 15px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: transform var(--transition), background var(--transition);
+}
+
+.classement {
+    font-weight: 700;
+    color: var(--primary);
+    min-width: 30px;
+    text-align: center;
+}
+
+.nom {
+    flex: 1;
+    text-align: left;
+    margin-left: 10px;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.temps {
+    font-weight: 600;
+    color: #333;
+}
+
+/* Message de chargement et aucun score */
+.loading, .aucun-score {
+    font-style: italic;
+    color: #555;
+    text-align: center;
+    padding: 15px;
+    background: var(--bg-light);
+    border-radius: var(--radius);
+    width: 100%;
+    max-width: 350px;
+    box-shadow: var(--shadow);
+}
+
+
 /* ===========================
    Footer (Voir Jules)
    =========================== */

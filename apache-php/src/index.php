@@ -34,23 +34,6 @@ Flight::route('/test-db', function () {
     Flight::json($results_personnes);
 });
 
-// Récupérer les meilleurs temps (GET /api/joueurs)
-Flight::route('GET /api/joueurs', function() {
-    $link = Flight::get('connexion_db');
-    $sql = "SELECT nom, temps FROM joueurs ORDER BY temps";
-    $requete = pg_query($link, $sql);
-    if ($requete) {
-        $rows = pg_fetch_all($requete, PGSQL_ASSOC) ?: [];
-        $out = [];
-        foreach ($rows as $r) {
-            $temps = $r['temps'];
-            $out[] = ['nom' => $r['nom'], 'temps' => $temps];
-        }
-        Flight::json($out);
-    } else {
-        Flight::json([], 500);
-    }
-});
 
 //API OBJETS
 Flight::route('GET /api/objets', function () {
@@ -143,6 +126,23 @@ Flight::route('POST /api/joueurs', function() {
     Flight::json(['success' => true, 'id' => ($resultat && isset($resultat[0]['id'])) ? $resultat[0]['id'] : null]);
     } else {
     Flight::json(['error' => 'Erreur sauvegarde'], 500);
+    }
+});
+
+Flight::route('GET /api/joueurs', function() {
+    $link = Flight::get('connexion_db');
+    $sql = "SELECT nom, temps FROM joueurs ORDER BY temps LIMIT 5;";
+    $requete = pg_query($link, $sql);
+    if ($requete) {
+        $rows = pg_fetch_all($requete, PGSQL_ASSOC) ?: [];
+        $out = [];
+        foreach ($rows as $r) {
+            $temps = $r['temps'];
+            $out[] = ['nom' => $r['nom'], 'temps' => $temps];
+        }
+        Flight::json($out);
+    } else {
+        Flight::json([], 500);
     }
 });
 

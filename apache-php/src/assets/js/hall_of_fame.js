@@ -2,7 +2,7 @@
 Vue.createApp({
     data() {
         return {
-        scores: [],
+        joueurs: [],
         chargement: true
         }
     },
@@ -14,7 +14,7 @@ Vue.createApp({
             fetch('/api/joueurs') 
             .then(response => response.json())
             .then(data => {
-                this.scores = data;
+                this.joueurs = data;
             })
             .catch(error => {
                 console.error('Erreur chargement scores:', error);
