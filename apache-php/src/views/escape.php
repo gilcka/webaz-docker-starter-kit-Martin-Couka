@@ -20,7 +20,9 @@
 
     <h1>LOUISE VADEAUDEAU</h1>
 
-    <div id="chrono">{{ chronoAffichage }}</div>
+    <div class="chrono">
+      {{ chronoAffichage }}     
+    </div>
 
     <div class ='header-buttons'>
     <button id="btn-fin" @click="testFin">Fin</button>

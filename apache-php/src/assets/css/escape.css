@@ -73,14 +73,10 @@ header .banniere h1 {
   transform: translateX(-50%);
 }
 
-#chrono {
+.chrono {
   font-size: 1.5rem;
   font-weight: bold;
-}
-
-#chrono {
-  font-size: 1.5rem;
-  font-weight: bold;
+  margin: 10px;
 }
 
 .header-buttons button {
