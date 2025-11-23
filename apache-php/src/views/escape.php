@@ -25,7 +25,7 @@
     </div>
 
     <div class ='header-buttons'>
-    <button id="btn-fin" @click="testFin">Fin</button>
+    <button id="btn-fin" @click="testFin">J'ai tous les objets, je peux emmener Louise Audodo</button>
     <label>
       <input type="checkbox" id = "carte_chaleur" @change="toggleHeatmap()">
       Calor
@@ -33,7 +33,7 @@
 
     </div>
     </div>
-    <p style='font-style: italic; font-weight: normal; font-size: 1rem;'><i>Baladez-vous et zoomez sur la carte pour trouver les objets dans la zone rouge</i></p>
+    <p style='font-style: italic; font-weight: normal; font-size: 1rem;'><i>Baladez-vous et zoomez sur la carte pour trouver les objets dans la zone rouge, et Louise Vadeaudeau elle-même</i></p>
   </header>
 
   <aside>
@@ -58,11 +58,6 @@
   </main>
 
   </div>
-
-  <script>
-    var objets = <?php echo json_encode($objets ?? []); ?>;
-    var personnes = <?php echo json_encode($personnes ?? []); ?>;
-  </script>
 
   <script src="assets/js/escape.js"></script>
 </body>

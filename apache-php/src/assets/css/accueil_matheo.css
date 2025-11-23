@@ -77,7 +77,7 @@ header {
    Hall of Fame
    =========================== */
 
-#hall_of_fame {
+.hall_of_fame {
   grid-area: hall;
   background: var(--bg-card);
   margin: 20px;

@@ -31,7 +31,7 @@
             mais il vous faut également rassembler <b>4 chiffres</b> en discutant avec 4 personnes différentes qui correspondent au code d'entrée de sa résidence.
             Dès que vous aurez récupéré un élément, vous le confierez à Louisa Mémaud qui le gardera précieusement en attendant que vous ayez tout rassemblé.
         </p>
-        <p>Vu que Louise Vadeaudeau est connue pour ses épisodes de sprint sur la parcelle Y, vous serez bien sur chronométrés et aurez peut-être la chance </p>
+        <p>Vu que Louise Vadeaudeau est connue pour ses épisodes de sprint sur la parcelle Y, vous serez bien sur chronométrés et aurez peut-être la chance d'intégrer le Hall of Fame qui compte les meilleurs joueurs de votre génération.</p>
     </div>
 
     <div id='jouer'>

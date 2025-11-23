@@ -27,10 +27,20 @@ Vue.createApp({
     },
 
     mounted() {
-        this.initialisationCarte();
-        this.creerHeatmapLayer();
 
-        this.demarrerChrono();
+        Promise.all([
+            fetch('/api/objets').then(r => r.json()),
+            fetch('/api/personnes').then(r => r.json())
+        ]).then(([objets, personnes]) => {
+
+            this.objets = objets;
+            this.personnes = personnes;
+
+            this.initialisationCarte();
+            this.creerHeatmapLayer();
+            this.demarrerChrono();
+
+        });
     },
 
     methods: {
@@ -84,7 +94,54 @@ Vue.createApp({
 
             if (code.trim() === "5847") {
                 alert("BRAVO, Louise est tirée du fossé de la parcelle Y grâce à toi");
+                // Arrêt du chrono
                 this.arreterChrono();
+                console.log("Temps final :", this.chronoAffichage);
+
+                // Demander le pseudo du joueur
+                let pseudo = prompt('Bravo ! Sous quel pseudo veux-tu enregistrer ton temps ?');
+                if (pseudo === null) return; // annulation
+                console.log("Pseudo entré :", pseudo);
+
+                pseudo = pseudo.trim();
+                if (!pseudo) {
+                    alert('Pseudo invalide, enregistrement annulé.');
+                    return;
+                }
+
+                const temps = this.chronoAffichage;  // "00:12:57"
+
+                fetch('/api/joueurs', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        nom: pseudo,
+                        temps: temps
+                    })
+                })
+                .then(r => r.json())
+                .then(data => {
+                    if (data && data.success) {
+                        const ok = window.confirm("C'est enregistré, tu peux retourner au menu admirer le Hall of Fame");
+                        
+                        if (ok) {
+                            // Redirection vers la page d'accueil
+                            window.location.href = '/';
+                        }              
+                                  
+                        fetch('/api/joueurs')
+                        .then(r => r.json())
+                        .then(joueurs => {
+                            console.log("Liste mise à jour :", joueurs);
+                        });
+
+                    } else {
+                        alert("Erreur lors de l'enregistrement : " + (data.error || "inconnue"));
+                        console.error(data);
+                    }
+                });
+
+
             } else {
                 alert("Mauvais code chacal, indice : ORDRE D'APPARITION");
             }
@@ -161,8 +218,9 @@ Vue.createApp({
                     <h3>CONSEIL : effectuez toutes ces étapes dans l'ordre indiqué</h3>
                     <ul>
                         <li>Ramasser les 5 objets que Louise a laissé tomber de son sac,</li> 
-                        <li>Dealer ses clés de maison en échange de 3 bouteilles de Jaeger à Gilles Grocaka qui est surement enterré sous un pont comme le gros clochard de merde qu'il est</li>
+                        <li>Dealer ses clés de maison en échange de 3 bouteilles de Jaeger à Gilles Grocaka qui est surement enterré sous un pont comme le gros clochard de merde qu'il est,</li>
                         <li>Trouver le code de sa résidence en répondant à 4 questions,</li>
+                        <li>Trouver Louise Vadeaudeau en personne qui se balade quelque part dans la zone...</li>
                     </ul>
                 </div>
             `);
@@ -231,7 +289,7 @@ Vue.createApp({
                     }
                 }
 
-                alert("Gilles : ok ma gueule, tiens les clés");
+                alert("Tiens les clés ma belle, tu devrais aller voir Killian Grosfront, Président du BDHess, qui est sûrement sur un lieu sportif du campus");
 
                 this.clesRecuperees = true;
                 this.déclencherApparitionPersonnes();
@@ -314,10 +372,10 @@ Vue.createApp({
 
         ajouterPersonnesCarte() {
             // Trier les personnes par ordre
-            personnes.sort((a, b) => a.ordre_apparition - b.ordre_apparition);
+            this.personnes.sort((a, b) => a.ordre_apparition - b.ordre_apparition);
 
-            for (let i = 0; i < personnes.length; i++) {
-                let personne = personnes[i];
+            for (let i = 0; i < this.personnes.length; i++) {
+                let personne = this.personnes[i];
                 let lat = parseFloat(personne.lat);
                 let lon = parseFloat(personne.lon);
 
@@ -352,7 +410,7 @@ Vue.createApp({
 
             if (reponse.trim() == personne.reponse) {
 
-                alert("Bonne réponse ma vie");
+                alert(`Bonne réponse ma vie ! ${personne.indice_fin}`);
 
                 // Donne l'objet
                 this.ajouterObjetInventaire(
@@ -394,8 +452,8 @@ Vue.createApp({
         ajouterObjetsCarte() {
             const self = this;
 
-            for (let i = 0; i < objets.length; i++) {
-                let objet = objets[i];
+            for (let i = 0; i < this.objets.length; i++) {
+                let objet = this.objets[i];
                 let lat = parseFloat(objet.lat);
                 let lon = parseFloat(objet.lon);
 

@@ -34,26 +34,44 @@ CREATE TABLE personnes (
     name TEXT, 
     message TEXT,
     reponse INT,
+	indice_fin TEXT,
     zoom INT, 
     ordre_apparition INT,
     image TEXT,
     loc geometry(Point, 4326)
 );
 
-INSERT INTO personnes (name, message, reponse, zoom, ordre_apparition, image, loc) VALUES
-('Killian Grosfront', 'Combien de fois on a gagné le trophée Descartes ?', 5, 15, 1, 'images/5.jpg',ST_SetSRID(ST_MakePoint(2.5925794002506253,48.839409302967056), 4326)),
-('Magali Carreaux', 'Combien a coûté la réparation de la fenêtre (en milliers d’euros) ?', 8, 15, 2,'images/8.jpg', ST_SetSRID(ST_MakePoint(2.58192261198548,48.843495838070886), 4326)),
-('Clara Bourbier', 'Combien de contrôles de présence ont eu les it2 depuis le début de l’année ?', 4, 15, 3, 'images/4.jpg', ST_SetSRID(ST_MakePoint(2.587200720208837,48.83942860331999), 4326)),
-('Diego Posédanssabagnole', 'Combien de parrains a Tom Cacadur ?', 7, 15, 4, 'images/7.jpg', ST_SetSRID(ST_MakePoint(2.585891112457032,48.844299902248146), 4326));
+INSERT INTO personnes (name, message, reponse, indice_fin, zoom, ordre_apparition, image, loc) VALUES
+('Killian Grosfront', 'Combien de fois on a gagné le trophée Descartes ?', 5, 
+ 'La personne suivante, Magali Carreaux, doit surement être en train de surveiller un chantier quelque part autour de l''école',
+ 15, 1, 'images/5.jpg',
+ ST_SetSRID(ST_MakePoint(2.5925794002506253,48.839409302967056), 4326)
+),
+
+('Magali Carreaux', 'Combien a coûté la réparation de la fenêtre (en milliers d’euros) ?', 8,
+ 'La personne détentrice du prochain numéro, Clara Bourbier, est la secrétaire du BDHess et doit sûrement faire la queue dans une administration quelconque de l''UGE',
+ 15, 2, 'images/8.jpg',
+ ST_SetSRID(ST_MakePoint(2.58192261198548,48.843495838070886), 4326)
+),
+
+('Clara Bourbier', 'Combien de contrôles de présence ont eu les it2 depuis le début de l’année ?', 4,
+ 'La dernière personne est nostalgique de ses années pré-ENSG, et doit sûrement être garée pas loin d''un collège, d''un lycée, ou d''une école',
+ 15, 3, 'images/4.jpg',
+ ST_SetSRID(ST_MakePoint(2.587200720208837,48.83942860331999), 4326)
+),
+
+('Diego Posédanssabagnole', 'Combien de parrains a Tom Cacadur ?', 7,
+ '',
+ 15, 4, 'images/7.jpg',
+ ST_SetSRID(ST_MakePoint(2.585891112457032,48.844299902248146), 4326)
+);
 
 DROP TABLE IF EXISTS joueurs;
 
 CREATE TABLE joueurs (
 	id SERIAL primary key, 
 	nom TEXT, 
-	heures INT, 
-	minutes INT, 
-	secondes INT
+	temps TIME
 );
 
 
