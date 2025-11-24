@@ -1,0 +1,4768 @@
+CONFIG 2025-11-24 12:51:35,593 [main][Log4J2Logger.java:210] : Logging policy: Log4J2
+CONFIG 2025-11-24 12:51:35,833 [main][Log4J2Logger.java:184] : Factory implementations for category GridCoverageFactory:
+  org.geotools.coverage.grid.GridCoverageFactory
+CONFIG 2025-11-24 12:51:36,348 [main][Log4J2Logger.java:184] : Factory implementations for category FilterFactory:
+  org.geotools.filter.FilterFactoryImpl
+CONFIG 2025-11-24 12:51:36,403 [main][Log4J2Logger.java:184] : Factory implementations for category StyleFactory:
+  org.geotools.styling.StyleFactoryImpl
+CONFIG 2025-11-24 12:51:36,416 [main][Log4J2Logger.java:184] : Factory implementations for category FeatureFactory:
+  org.geotools.feature.LenientFeatureFactoryImpl
+  org.geotools.feature.ValidatingFeatureFactoryImpl
+DEBUG 2025-11-24 12:51:37,343 [main][Log4J2Logger.java:215] : Extension lookup 'XStreamPersisterInitializer', prior to bean geoserverExtensions initialisation.
+DEBUG 2025-11-24 12:51:37,345 [main][Log4J2Logger.java:215] : Extension lookup 'ExtensionFilter', prior to bean geoserverExtensions initialisation.
+DEBUG 2025-11-24 12:51:37,350 [main][Log4J2Logger.java:215] : Extension lookup 'ExtensionProvider', but provided ApplicationContext is unset.
+DEBUG 2025-11-24 12:51:37,352 [main][Log4J2Logger.java:215] : Extension lookup 'ExtensionFilter', but provided ApplicationContext is unset.
+DEBUG 2025-11-24 12:51:37,418 [main][Log4J2Logger.java:215] : CONFIGURING GEOSERVER LOGGING -------------------------
+24 Nov 12:51:37 CONFIG [geoserver.logging] - Log4j 2 configuration set to DEFAULT_LOGGING.xml
+24 Nov 12:51:43 CONFIG [org.geoserver] - GeoServer configuration lock is enabled
+24 Nov 12:51:43 CONFIG [gwc.config] - Will look for 'geowebcache.xml' in directory '/opt/geoserver/data_dir/gwc'.
+24 Nov 12:51:43 CONFIG [config.XMLConfiguration] - TileLayerConfiguration file validated fine.
+24 Nov 12:51:46 CONFIG [geoserver.config] - Loading catalog /opt/geoserver/data_dir
+24 Nov 12:51:46 WARN   [config.datadir] - Configured parallelism is invalid: GEOSERVER_DATA_DIR_LOADER_THREADS=0, using default of 12
+24 Nov 12:51:46 CONFIG [config.datadir] - Catalog and configuration loader uses 12 threads out of 12 available cores.
+24 Nov 12:51:46 CONFIG [config.datadir] - Loaded style chaleur
+24 Nov 12:51:46 CONFIG [config.datadir] - Loaded style generic
+24 Nov 12:51:46 CONFIG [config.datadir] - Loaded style line
+24 Nov 12:51:46 CONFIG [config.datadir] - Loaded style point
+24 Nov 12:51:46 CONFIG [config.datadir] - Loaded style polygon
+24 Nov 12:51:46 CONFIG [config.datadir] - Loaded style raster
+24 Nov 12:51:47 CONFIG [config.datadir] - Loaded workspace chaleur
+24 Nov 12:51:47 CONFIG [config.datadir] - Loaded namespace chaleur
+24 Nov 12:51:47 CONFIG [config.datadir] - Loaded data store mydb
+24 Nov 12:51:47 CONFIG [config.datadir] - Loaded feature type personnes, enabled
+24 Nov 12:51:47 CONFIG [config.datadir] - Loaded feature type objets, enabled
+24 Nov 12:51:47 CONFIG [config.datadir] - Loaded layer personnes
+24 Nov 12:51:47 CONFIG [config.datadir] - Loaded layer objets
+24 Nov 12:51:49 INFO   [geoserver.config] - Read Catalog in 2.286 s: workspaces: 1, namespaces: 1, styles: 6, stores: 1, resources: 2, layers: 2, layer groups: 0.
+24 Nov 12:51:49 CONFIG [config.XMLConfiguration] - Initializing GridSets from /opt/geoserver/data_dir/gwc
+24 Nov 12:51:49 INFO   [config.XMLConfiguration] - Read GridSet InspireCRS84Quad
+24 Nov 12:51:49 CONFIG [config.XMLConfiguration] - Initializing layers from /opt/geoserver/data_dir/gwc
+24 Nov 12:51:49 CONFIG [gwc.layer] - Initializing GWC configuration based on GeoServer's Catalog
+24 Nov 12:51:49 CONFIG [gwc.layer] - GeoServer TileLayer store base directory is: gwc-layers
+24 Nov 12:51:49 CONFIG [gwc.layer] - Loading tile layers from gwc-layers
+24 Nov 12:51:49 CONFIG [gwc.layer] - Loaded 2 tile layers in 45.13 ms
+24 Nov 12:51:49 CONFIG [storage.BlobStoreAggregator] - BlobStoreConfiguration /opt/geoserver/data_dir/gwc contained no blob store infos.
+24 Nov 12:51:49 CONFIG [storage.DefaultStorageFinder] - Found system environment variable GEOWEBCACHE_CACHE_DIR set to /opt/geoserver/data_dir/gwc, using it as the default prefix.
+24 Nov 12:51:49 CONFIG [geowebcache.GeoWebCacheDispatcher] - Invoked setServletPrefix(gwc)
+24 Nov 12:51:49 CONFIG [wms.WMSService] - Will NOT recombine tiles for non-tiling clients.
+24 Nov 12:51:49 CONFIG [wms.WMSService] - Will proxy requests to backend that are not getmap or getcapabilities.
+24 Nov 12:51:49 WARN   [codec.ImageEncoderImpl] - Preferred SPI not found, using the first available one: com.sun.imageio.plugins.tiff.TIFFImageWriterSpi
+24 Nov 12:51:49 CONFIG [config.datadir] - Loading GeoServer config...
+24 Nov 12:51:50 CONFIG [config.datadir] - Loaded service 'WMTSInfoImpl-61594f0a:19ab5dd6231:-7ffb', enabled
+24 Nov 12:51:50 CONFIG [config.datadir] - Loaded service 'WMSInfoImpl-61594f0a:19ab5dd6231:-7ffa', enabled
+24 Nov 12:51:50 CONFIG [config.datadir] - Loaded service 'WFSInfoImpl-61594f0a:19ab5dd6231:-7ff9', enabled
+24 Nov 12:51:50 CONFIG [config.datadir] - Loaded service 'WCSInfoImpl-61594f0a:19ab5dd6231:-7ff8', enabled
+24 Nov 12:51:50 CONFIG [config.datadir] - Loaded service 'WPSInfoImpl-61594f0a:19ab5dd6231:-7ff7', enabled
+24 Nov 12:51:50 CONFIG [config.datadir] - Loaded service 'csw', enabled
+24 Nov 12:51:50 WARN   [config.datadir] - Configured parallelism is invalid: GEOSERVER_DATA_DIR_LOADER_THREADS=0, using default of 12
+24 Nov 12:51:50 CONFIG [config.datadir] - Catalog and configuration loader uses 12 threads out of 12 available cores.
+24 Nov 12:51:50 CONFIG [config.datadir] - Loading workspace services and settings...
+24 Nov 12:51:50 CONFIG [config.datadir] - GeoServer config (settings and services) loaded in 432.3 ms
+24 Nov 12:51:50 CONFIG [gwc.config] - Initializing GeoServer specific GWC configuration from gwc-gs.xml
+24 Nov 12:51:50 CONFIG [gwc.config] - Will look for 'geowebcache-diskquota.xml' in directory '/opt/geoserver/data_dir/gwc'.
+24 Nov 12:51:50 CONFIG [gwc.config] - Will look for 'geowebcache-diskquota-jdbc.xml' in directory '/opt/geoserver/data_dir/gwc'.
+24 Nov 12:51:50 CONFIG [diskquota.ConfigLoader] - Quota config is: /opt/geoserver/data_dir/gwc/geowebcache-diskquota.xml
+24 Nov 12:51:50 CONFIG [diskquota.ConfigLoader] - Quota config is: /opt/geoserver/data_dir/gwc/geowebcache-diskquota.xml
+24 Nov 12:51:51 INFO   [flow.config] - Loaded control-flow rule: ows.global=100
+24 Nov 12:51:51 INFO   [flow.config] - Loaded control-flow rule: ows.wms.getmap=10
+24 Nov 12:51:51 INFO   [flow.config] - Loaded control-flow rule: ows.wfs.getfeature.application/msexcel=4
+24 Nov 12:51:51 INFO   [flow.config] - Loaded control-flow rule: user=6
+24 Nov 12:51:51 INFO   [flow.config] - Loaded control-flow rule: ows.gwc=16
+24 Nov 12:51:51 INFO   [flow.config] - Loaded control-flow rule: user.ows.wps.execute=1000/d;30s
+24 Nov 12:51:51 INFO   [flow.config] - Loaded control-flow rule: user.ows.wms.getmap=30/s
+24 Nov 12:51:52 INFO   [flow.config] - Loaded control-flow rule: ip=10
+24 Nov 12:51:52 CONFIG [geoserver.flow] - Control-flow active with 8 flow controllers
+24 Nov 12:51:56 WARN   [turbojpeg.TurboJPEGMapResponse] - The turbo jpeg encoder is available for usage
+24 Nov 12:51:58 CONFIG [geoserver.security] - AuthenticationCache Initialized with 1000 Max Entries, 300 seconds idle time, 600 seconds time to live and 3 concurrency level
+24 Nov 12:51:58 CONFIG [geoserver.security] - AuthenticationCache Eviction Task created to run every 600 seconds
+24 Nov 12:52:00 CONFIG [geoserver.wps] - Found 7 bindable processes in GeoServer specific processes
+24 Nov 12:52:00 CONFIG [geoserver.wps] - Found 89 bindable processes in Deprecated processes
+24 Nov 12:52:00 CONFIG [geoserver.wps] - Blacklisting process vec:GroupCandidateSelection as the input groupingAttributes of type class java.lang.Object cannot be handled
+24 Nov 12:52:00 CONFIG [geoserver.wps] - Found 31 bindable processes in Vector processes
+24 Nov 12:52:00 CONFIG [geoserver.wps] - Blacklisting process ras:ConvolveCoverage as the input kernel of type class org.eclipse.imagen.KernelImageN cannot be handled
+24 Nov 12:52:00 CONFIG [geoserver.wps] - Blacklisting process ras:RasterZonalStatistics2 as the input zones of type class java.lang.Object cannot be handled
+24 Nov 12:52:00 CONFIG [geoserver.wps] - Blacklisting process ras:RasterZonalStatistics2 as the input rangeData of type class java.lang.Object cannot be handled
+24 Nov 12:52:00 CONFIG [geoserver.wps] - Blacklisting process ras:RasterZonalStatistics2 as the output zonal statistics of type interface java.util.List cannot be handled
+24 Nov 12:52:00 CONFIG [geoserver.wps] - Found 18 bindable processes in Raster processes
+24 Nov 12:52:00 CONFIG [geoserver.wps] - Found 48 bindable processes in Geometry processes
+24 Nov 12:52:00 CONFIG [geoserver.wps] - Found 1 bindable processes in PolygonLabelProcess
+24 Nov 12:52:00 CONFIG [geoserver.wps] - Found 1 bindable processes in geo
+24 Nov 12:52:00 CONFIG [geoserver.wps] - Found 1 bindable processes in geo
+24 Nov 12:52:06 INFO   [geoserver.monitor] - Monitor extension enabled
+24 Nov 12:52:07 CONFIG [diskquota.ConfigLoader] - Quota config is: /opt/geoserver/data_dir/gwc/geowebcache-diskquota.xml
+24 Nov 12:52:07 CONFIG [diskquota.DiskQuotaMonitor] - Setting up disk quota periodic enforcement task
+24 Nov 12:52:07 CONFIG [diskquota.DiskQuotaMonitor] - 0 layers configured with their own quotas. 
+24 Nov 12:52:07 CONFIG [diskquota.DiskQuotaMonitor] - 2 layers attached to global quota 20.0 GB
+24 Nov 12:52:07 CONFIG [diskquota.DiskQuotaMonitor] - Disk quota periodic enforcement task set up every 5 SECONDS
+24 Nov 12:52:08 CONFIG [geoserver.security] - Start reloading user/groups for service named default
+24 Nov 12:52:08 CONFIG [geoserver.security] - Reloading user/groups successful for service named default
+24 Nov 12:52:11 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:11 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:11 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:11 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:11 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:11 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:11 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:11 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:11 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:11 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:11 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:11 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:11 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:11 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:11 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:11 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:11 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:11 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:11 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:11 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:11 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:11 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:11 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:11 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:11 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:11 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:11 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:11 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:11 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:11 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:11 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:11 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:11 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:11 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:11 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:11 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:11 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:11 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:11 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:11 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:11 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:11 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:11 INFO   [geoserver.flow] - Request control-flow performed, running requests: 5, blocked requests: 26
+24 Nov 12:52:11 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:11 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:11 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:11 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:11 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:11 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:11 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:11 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:11 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:11 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:11 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:11 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:11 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:11 INFO   [geoserver.flow] - Request control-flow performed, running requests: 9, blocked requests: 22
+24 Nov 12:52:11 INFO   [geoserver.flow] - Request control-flow performed, running requests: 7, blocked requests: 24
+24 Nov 12:52:11 INFO   [geoserver.flow] - Request control-flow performed, running requests: 3, blocked requests: 28
+24 Nov 12:52:11 INFO   [geoserver.flow] - Request control-flow performed, running requests: 4, blocked requests: 27
+24 Nov 12:52:11 INFO   [geoserver.flow] - Request control-flow performed, running requests: 3, blocked requests: 28
+24 Nov 12:52:11 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:11 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:11 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:11 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:11 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:11 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:11 INFO   [geoserver.flow] - Request control-flow performed, running requests: 8, blocked requests: 23
+24 Nov 12:52:11 INFO   [geoserver.flow] - Request control-flow performed, running requests: 3, blocked requests: 28
+24 Nov 12:52:11 INFO   [geoserver.flow] - Request control-flow performed, running requests: 6, blocked requests: 25
+24 Nov 12:52:11 INFO   [geoserver.flow] - Request control-flow performed, running requests: 10, blocked requests: 21
+24 Nov 12:52:11 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:11 INFO   [geoserver.flow] - Request control-flow performed, running requests: 10, blocked requests: 20
+24 Nov 12:52:11 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:11 INFO   [geoserver.flow] - Request completed, running requests: 10, blocked requests: 20
+24 Nov 12:52:12 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:12 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:12 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:12 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:12 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:12 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:12 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:12 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:12 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:12 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:15 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.6037597656250004 : 2.6147460937500004, 48.828565527993234 : 48.83579746243093]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@79d1d11f[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.6037597656250004,48.828565527993234,2.6147460937500004,48.83579746243093, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:15 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.6147460937500004 : 2.6257324218750004, 48.83579746243093 : 48.84302835299519]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@5bec417e[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.6147460937500004,48.83579746243093,2.6257324218750004,48.84302835299519, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:15 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.6147460937500004 : 2.6257324218750004, 48.84302835299519 : 48.850258199721495]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@46113394[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.6147460937500004,48.84302835299519,2.6257324218750004,48.850258199721495, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:15 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.5598144531250004 : 2.5708007812500004, 48.84302835299519 : 48.850258199721495]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@3ffd367c[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.5598144531250004,48.84302835299519,2.5708007812500004,48.850258199721495, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:15 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.5817871093750004 : 2.5927734375000004, 48.828565527993234 : 48.83579746243093]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@4b9c9421[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.5817871093750004,48.828565527993234,2.5927734375000004,48.83579746243093, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:15 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.5927734375000004 : 2.6037597656250004, 48.84302835299519 : 48.850258199721495]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@47336323[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.5927734375000004,48.84302835299519,2.6037597656250004,48.850258199721495, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:15 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.5488281250000004 : 2.5598144531250004, 48.83579746243093 : 48.84302835299519]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@c4ad06e[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.5488281250000004,48.83579746243093,2.5598144531250004,48.84302835299519, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:15 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.5708007812500004 : 2.5817871093750004, 48.84302835299519 : 48.850258199721495]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@660d056d[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.5708007812500004,48.84302835299519,2.5817871093750004,48.850258199721495, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:15 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.5817871093750004 : 2.5927734375000004, 48.83579746243093 : 48.84302835299519]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@d72fc63[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.5817871093750004,48.83579746243093,2.5927734375000004,48.84302835299519, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:15 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.5708007812500004 : 2.5817871093750004, 48.84302835299519 : 48.850258199721495]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@7a7f8c6b[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.5708007812500004,48.84302835299519,2.5817871093750004,48.850258199721495, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:15 INFO   [geoserver.servlets] - OutputStream was successfully aborted.
+24 Nov 12:52:15 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:15 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:15 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:15 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:15 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:15 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request control-flow performed, running requests: 3, blocked requests: 22
+24 Nov 12:52:15 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:15 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:15 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request completed, running requests: 0, blocked requests: 25
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request control-flow performed, running requests: 1, blocked requests: 24
+24 Nov 12:52:15 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request control-flow performed, running requests: 5, blocked requests: 20
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request completed, running requests: 3, blocked requests: 22
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request completed, running requests: 3, blocked requests: 22
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request control-flow performed, running requests: 2, blocked requests: 23
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request completed, running requests: 1, blocked requests: 24
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request completed, running requests: 3, blocked requests: 22
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request completed, running requests: 3, blocked requests: 22
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request completed, running requests: 2, blocked requests: 23
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request completed, running requests: 6, blocked requests: 19
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request control-flow performed, running requests: 4, blocked requests: 21
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request completed, running requests: 3, blocked requests: 22
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request control-flow performed, running requests: 6, blocked requests: 19
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request completed, running requests: 5, blocked requests: 20
+24 Nov 12:52:15 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.5817871093750004 : 2.5927734375000004, 48.83579746243093 : 48.84302835299519]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@1b35f669[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.5817871093750004,48.83579746243093,2.5927734375000004,48.84302835299519, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:15 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.5708007812500004 : 2.5817871093750004, 48.83579746243093 : 48.84302835299519]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@7d0d3438[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.5708007812500004,48.83579746243093,2.5817871093750004,48.84302835299519, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:15 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.5927734375000004 : 2.6037597656250004, 48.83579746243093 : 48.84302835299519]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@50be2b2[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.5927734375000004,48.83579746243093,2.6037597656250004,48.84302835299519, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:15 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.5598144531250004 : 2.5708007812500004, 48.83579746243093 : 48.84302835299519]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@d8e9599[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.5598144531250004,48.83579746243093,2.5708007812500004,48.84302835299519, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:15 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.5817871093750004 : 2.5927734375000004, 48.83579746243093 : 48.84302835299519]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@dd03694[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.5817871093750004,48.83579746243093,2.5927734375000004,48.84302835299519, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:15 INFO   [geoserver.servlets] - OutputStream was successfully aborted.
+24 Nov 12:52:15 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request completed, running requests: 5, blocked requests: 19
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request control-flow performed, running requests: 4, blocked requests: 18
+24 Nov 12:52:15 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:15 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:15 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request control-flow performed, running requests: 4, blocked requests: 17
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request completed, running requests: 3, blocked requests: 18
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request completed, running requests: 4, blocked requests: 17
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request control-flow performed, running requests: 5, blocked requests: 16
+24 Nov 12:52:15 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request completed, running requests: 5, blocked requests: 15
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request control-flow performed, running requests: 6, blocked requests: 14
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request control-flow performed, running requests: 6, blocked requests: 15
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request completed, running requests: 5, blocked requests: 16
+24 Nov 12:52:15 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.5817871093750004 : 2.5927734375000004, 48.828565527993234 : 48.83579746243093]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@3b0b094e[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.5817871093750004,48.828565527993234,2.5927734375000004,48.83579746243093, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:15 INFO   [geoserver.servlets] - OutputStream was successfully aborted.
+24 Nov 12:52:15 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request completed, running requests: 5, blocked requests: 14
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request control-flow performed, running requests: 6, blocked requests: 13
+24 Nov 12:52:15 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.5817871093750004 : 2.5927734375000004, 48.84302835299519 : 48.850258199721495]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@7953a8cd[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.5817871093750004,48.84302835299519,2.5927734375000004,48.850258199721495, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:15 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.5598144531250004 : 2.5708007812500004, 48.84302835299519 : 48.850258199721495]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@550b4d60[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.5598144531250004,48.84302835299519,2.5708007812500004,48.850258199721495, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:15 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.5488281250000004 : 2.5598144531250004, 48.828565527993234 : 48.83579746243093]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@46ba245[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.5488281250000004,48.828565527993234,2.5598144531250004,48.83579746243093, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:15 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.6037597656250004 : 2.6147460937500004, 48.83579746243093 : 48.84302835299519]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@2a4a4230[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.6037597656250004,48.83579746243093,2.6147460937500004,48.84302835299519, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:15 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request completed, running requests: 5, blocked requests: 13
+24 Nov 12:52:15 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.5817871093750004 : 2.5927734375000004, 48.84302835299519 : 48.850258199721495]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@6dc43436[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.5817871093750004,48.84302835299519,2.5927734375000004,48.850258199721495, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request control-flow performed, running requests: 6, blocked requests: 12
+24 Nov 12:52:15 INFO   [geoserver.servlets] - OutputStream was successfully aborted.
+24 Nov 12:52:15 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:15 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:15 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request control-flow performed, running requests: 5, blocked requests: 10
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request control-flow performed, running requests: 4, blocked requests: 11
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request completed, running requests: 3, blocked requests: 12
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request control-flow performed, running requests: 6, blocked requests: 9
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request completed, running requests: 5, blocked requests: 10
+24 Nov 12:52:15 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request completed, running requests: 4, blocked requests: 11
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request control-flow performed, running requests: 6, blocked requests: 8
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request completed, running requests: 5, blocked requests: 9
+24 Nov 12:52:15 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.5708007812500004 : 2.5817871093750004, 48.84302835299519 : 48.850258199721495]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@3fd5ad9c[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.5708007812500004,48.84302835299519,2.5817871093750004,48.850258199721495, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:15 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request completed, running requests: 5, blocked requests: 8
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request control-flow performed, running requests: 6, blocked requests: 7
+24 Nov 12:52:15 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.5488281250000004 : 2.5598144531250004, 48.83579746243093 : 48.84302835299519]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@18f938f2[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.5488281250000004,48.83579746243093,2.5598144531250004,48.84302835299519, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:15 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.5817871093750004 : 2.5927734375000004, 48.828565527993234 : 48.83579746243093]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@11e51d81[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.5817871093750004,48.828565527993234,2.5927734375000004,48.83579746243093, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:15 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.5708007812500004 : 2.5817871093750004, 48.828565527993234 : 48.83579746243093]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@3ed4b9e2[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.5708007812500004,48.828565527993234,2.5817871093750004,48.83579746243093, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:15 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:15 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.5927734375000004 : 2.6037597656250004, 48.83579746243093 : 48.84302835299519]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@39018146[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.5927734375000004,48.83579746243093,2.6037597656250004,48.84302835299519, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request control-flow performed, running requests: 6, blocked requests: 6
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request completed, running requests: 5, blocked requests: 7
+24 Nov 12:52:15 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:15 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.5488281250000004 : 2.5598144531250004, 48.84302835299519 : 48.850258199721495]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@78964f49[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.5488281250000004,48.84302835299519,2.5598144531250004,48.850258199721495, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:15 INFO   [geoserver.servlets] - OutputStream was successfully aborted.
+24 Nov 12:52:15 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request completed, running requests: 4, blocked requests: 5
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request control-flow performed, running requests: 5, blocked requests: 4
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request control-flow performed, running requests: 5, blocked requests: 5
+24 Nov 12:52:15 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request completed, running requests: 4, blocked requests: 6
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request control-flow performed, running requests: 5, blocked requests: 3
+24 Nov 12:52:15 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request completed, running requests: 5, blocked requests: 3
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request completed, running requests: 4, blocked requests: 4
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request control-flow performed, running requests: 6, blocked requests: 2
+24 Nov 12:52:15 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.5598144531250004 : 2.5708007812500004, 48.828565527993234 : 48.83579746243093]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@25231f79[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.5598144531250004,48.828565527993234,2.5708007812500004,48.83579746243093, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:15 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.5817871093750004 : 2.5927734375000004, 48.84302835299519 : 48.850258199721495]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@144b4489[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.5817871093750004,48.84302835299519,2.5927734375000004,48.850258199721495, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:15 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request completed, running requests: 5, blocked requests: 2
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request control-flow performed, running requests: 6, blocked requests: 1
+24 Nov 12:52:15 INFO   [geoserver.servlets] - OutputStream was successfully aborted.
+24 Nov 12:52:15 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request completed, running requests: 5, blocked requests: 1
+24 Nov 12:52:15 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.5817871093750004 : 2.5927734375000004, 48.83579746243093 : 48.84302835299519]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@398c6af9[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.5817871093750004,48.83579746243093,2.5927734375000004,48.84302835299519, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:15 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.5927734375000004 : 2.6037597656250004, 48.83579746243093 : 48.84302835299519]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@2d2eee30[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.5927734375000004,48.83579746243093,2.6037597656250004,48.84302835299519, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request control-flow performed, running requests: 6, blocked requests: 0
+24 Nov 12:52:15 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.5927734375000004 : 2.6037597656250004, 48.83579746243093 : 48.84302835299519]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@3c8e65ad[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.5927734375000004,48.83579746243093,2.6037597656250004,48.84302835299519, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:15 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.5817871093750004 : 2.5927734375000004, 48.828565527993234 : 48.83579746243093]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@6e494e99[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.5817871093750004,48.828565527993234,2.5927734375000004,48.83579746243093, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:15 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:15 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request completed, running requests: 4, blocked requests: 0
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request completed, running requests: 4, blocked requests: 0
+24 Nov 12:52:15 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:15 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request completed, running requests: 2, blocked requests: 0
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request completed, running requests: 2, blocked requests: 0
+24 Nov 12:52:15 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:15 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:15 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request control-flow performed, running requests: 3, blocked requests: 1
+24 Nov 12:52:15 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request control-flow performed, running requests: 4, blocked requests: 1
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request control-flow performed, running requests: 5, blocked requests: 0
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:15 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.5708007812500004 : 2.5817871093750004, 48.83579746243093 : 48.84302835299519]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@38f925fc[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.5708007812500004,48.83579746243093,2.5817871093750004,48.84302835299519, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request control-flow performed, running requests: 6, blocked requests: 0
+24 Nov 12:52:15 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.5817871093750004 : 2.5927734375000004, 48.84302835299519 : 48.850258199721495]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@207363eb[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.5817871093750004,48.84302835299519,2.5927734375000004,48.850258199721495, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:15 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request completed, running requests: 5, blocked requests: 0
+24 Nov 12:52:15 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request completed, running requests: 4, blocked requests: 0
+24 Nov 12:52:15 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:15 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.5927734375000004 : 2.6037597656250004, 48.84302835299519 : 48.850258199721495]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@257f0887[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.5927734375000004,48.84302835299519,2.6037597656250004,48.850258199721495, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request control-flow performed, running requests: 5, blocked requests: 0
+24 Nov 12:52:15 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.5708007812500004 : 2.5817871093750004, 48.828565527993234 : 48.83579746243093]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@737ce869[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.5708007812500004,48.828565527993234,2.5817871093750004,48.83579746243093, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:15 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:15 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request completed, running requests: 4, blocked requests: 0
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:15 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.5927734375000004 : 2.6037597656250004, 48.828565527993234 : 48.83579746243093]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@551749c5[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.5927734375000004,48.828565527993234,2.6037597656250004,48.83579746243093, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request control-flow performed, running requests: 5, blocked requests: 0
+24 Nov 12:52:15 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.5598144531250004 : 2.5708007812500004, 48.83579746243093 : 48.84302835299519]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@7daba385[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.5598144531250004,48.83579746243093,2.5708007812500004,48.84302835299519, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:15 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request completed, running requests: 4, blocked requests: 0
+24 Nov 12:52:15 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:15 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request completed, running requests: 2, blocked requests: 0
+24 Nov 12:52:15 INFO   [geoserver.flow] - Request completed, running requests: 2, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request control-flow performed, running requests: 3, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request control-flow performed, running requests: 4, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.6037597656250004 : 2.6147460937500004, 48.83579746243093 : 48.84302835299519]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@7478f73d[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.6037597656250004,48.83579746243093,2.6147460937500004,48.84302835299519, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request control-flow performed, running requests: 5, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request control-flow performed, running requests: 6, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request completed, running requests: 5, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.5598144531250004 : 2.5708007812500004, 48.84302835299519 : 48.850258199721495]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@43a40e3[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.5598144531250004,48.84302835299519,2.5708007812500004,48.850258199721495, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:16 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request completed, running requests: 4, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request control-flow performed, running requests: 5, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.6037597656250004 : 2.6147460937500004, 48.828565527993234 : 48.83579746243093]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@156c5306[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.6037597656250004,48.828565527993234,2.6147460937500004,48.83579746243093, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request control-flow performed, running requests: 6, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request completed, running requests: 5, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.5598144531250004 : 2.5708007812500004, 48.828565527993234 : 48.83579746243093]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@16cd0e8b[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.5598144531250004,48.828565527993234,2.5708007812500004,48.83579746243093, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:16 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request completed, running requests: 4, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.5927734375000004 : 2.6037597656250004, 48.850258199721495 : 48.857487002645485]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@1c017876[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.5927734375000004,48.850258199721495,2.6037597656250004,48.857487002645485, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.6037597656250004 : 2.6147460937500004, 48.850258199721495 : 48.857487002645485]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@39847e96[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.6037597656250004,48.850258199721495,2.6147460937500004,48.857487002645485, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:16 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request completed, running requests: 3, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request completed, running requests: 2, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request control-flow performed, running requests: 3, blocked requests: 1
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request control-flow performed, running requests: 4, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.5708007812500004 : 2.5817871093750004, 48.821332549646655 : 48.828565527993234]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@17d066e9[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.5708007812500004,48.821332549646655,2.5817871093750004,48.828565527993234, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.5378417968750004 : 2.5488281250000004, 48.850258199721495 : 48.857487002645485]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@6ebecd39[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.5378417968750004,48.850258199721495,2.5488281250000004,48.857487002645485, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request control-flow performed, running requests: 5, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:16 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:16 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request completed, running requests: 4, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request control-flow performed, running requests: 4, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request completed, running requests: 3, blocked requests: 1
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request control-flow performed, running requests: 5, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request control-flow performed, running requests: 6, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.5598144531250004 : 2.5708007812500004, 48.857487002645485 : 48.864714761802794]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@2c1c2aa8[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.5598144531250004,48.857487002645485,2.5708007812500004,48.864714761802794, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.5378417968750004 : 2.5488281250000004, 48.83579746243093 : 48.84302835299519]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@66f4b678[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.5378417968750004,48.83579746243093,2.5488281250000004,48.84302835299519, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:16 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request completed, running requests: 5, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.6037597656250004 : 2.6147460937500004, 48.857487002645485 : 48.864714761802794]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@27fb7d9e[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.6037597656250004,48.857487002645485,2.6147460937500004,48.864714761802794, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:16 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request completed, running requests: 4, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request completed, running requests: 3, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.5268554687500004 : 2.5378417968750004, 48.83579746243093 : 48.84302835299519]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@331d403f[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.5268554687500004,48.83579746243093,2.5378417968750004,48.84302835299519, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:16 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request completed, running requests: 2, blocked requests: 1
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request control-flow performed, running requests: 3, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request control-flow performed, running requests: 4, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.5488281250000004 : 2.5598144531250004, 48.857487002645485 : 48.864714761802794]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@2ce5959b[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.5488281250000004,48.857487002645485,2.5598144531250004,48.864714761802794, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.5817871093750004 : 2.5927734375000004, 48.857487002645485 : 48.864714761802794]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@46d4d2d6[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.5817871093750004,48.857487002645485,2.5927734375000004,48.864714761802794, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request control-flow performed, running requests: 5, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:16 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request control-flow performed, running requests: 5, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request completed, running requests: 5, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request completed, running requests: 4, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request control-flow performed, running requests: 5, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request control-flow performed, running requests: 6, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.5817871093750004 : 2.5927734375000004, 48.850258199721495 : 48.857487002645485]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@36868532[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.5817871093750004,48.850258199721495,2.5927734375000004,48.857487002645485, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.5378417968750004 : 2.5488281250000004, 48.828565527993234 : 48.83579746243093]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@3627464f[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.5378417968750004,48.828565527993234,2.5488281250000004,48.83579746243093, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:16 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request completed, running requests: 5, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request completed, running requests: 4, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.5488281250000004 : 2.5598144531250004, 48.821332549646655 : 48.828565527993234]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@514b664f[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.5488281250000004,48.821332549646655,2.5598144531250004,48.828565527993234, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.5268554687500004 : 2.5378417968750004, 48.84302835299519 : 48.850258199721495]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@410cc3ff[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.5268554687500004,48.84302835299519,2.5378417968750004,48.850258199721495, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:16 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:16 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request completed, running requests: 2, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request completed, running requests: 2, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.5708007812500004 : 2.5817871093750004, 48.857487002645485 : 48.864714761802794]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@36ea4ab6[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.5708007812500004,48.857487002645485,2.5817871093750004,48.864714761802794, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.5708007812500004 : 2.5817871093750004, 48.850258199721495 : 48.857487002645485]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@3bf0e4a8[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.5708007812500004,48.850258199721495,2.5817871093750004,48.857487002645485, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:16 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request completed, running requests: 1, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request control-flow performed, running requests: 2, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:16 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request control-flow performed, running requests: 2, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request completed, running requests: 2, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request control-flow performed, running requests: 3, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request control-flow performed, running requests: 4, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request control-flow performed, running requests: 5, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request control-flow performed, running requests: 6, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.5598144531250004 : 2.5708007812500004, 48.821332549646655 : 48.828565527993234]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@7332b8f6[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.5598144531250004,48.821332549646655,2.5708007812500004,48.828565527993234, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.5378417968750004 : 2.5488281250000004, 48.857487002645485 : 48.864714761802794]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@1bcc0fae[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.5378417968750004,48.857487002645485,2.5488281250000004,48.864714761802794, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:16 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request completed, running requests: 5, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.5378417968750004 : 2.5488281250000004, 48.84302835299519 : 48.850258199721495]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@2847be71[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.5378417968750004,48.84302835299519,2.5488281250000004,48.850258199721495, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:16 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request completed, running requests: 4, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.5378417968750004 : 2.5488281250000004, 48.821332549646655 : 48.828565527993234]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@352b959e[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.5378417968750004,48.821332549646655,2.5488281250000004,48.828565527993234, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:16 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request completed, running requests: 3, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.5598144531250004 : 2.5708007812500004, 48.850258199721495 : 48.857487002645485]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@301950cc[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.5598144531250004,48.850258199721495,2.5708007812500004,48.857487002645485, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request completed, running requests: 2, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:16 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request completed, running requests: 1, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.5488281250000004 : 2.5598144531250004, 48.850258199721495 : 48.857487002645485]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@5c4b7cd1[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.5488281250000004,48.850258199721495,2.5598144531250004,48.857487002645485, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request control-flow performed, running requests: 2, blocked requests: 1
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request control-flow performed, running requests: 3, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:16 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request completed, running requests: 2, blocked requests: 1
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request control-flow performed, running requests: 3, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request control-flow performed, running requests: 4, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request control-flow performed, running requests: 5, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.5927734375000004 : 2.6037597656250004, 48.857487002645485 : 48.864714761802794]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@499cde1f[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.5927734375000004,48.857487002645485,2.6037597656250004,48.864714761802794, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.6037597656250004 : 2.6147460937500004, 48.821332549646655 : 48.828565527993234]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@322da813[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.6037597656250004,48.821332549646655,2.6147460937500004,48.828565527993234, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:16 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request control-flow performed, running requests: 5, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request completed, running requests: 5, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.5927734375000004 : 2.6037597656250004, 48.821332549646655 : 48.828565527993234]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@4093ada2[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.5927734375000004,48.821332549646655,2.6037597656250004,48.828565527993234, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:16 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request completed, running requests: 4, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.5817871093750004 : 2.5927734375000004, 48.821332549646655 : 48.828565527993234]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@24dce7d2[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.5817871093750004,48.821332549646655,2.5927734375000004,48.828565527993234, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:16 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:16 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request completed, running requests: 2, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request completed, running requests: 2, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.5268554687500004 : 2.5378417968750004, 48.850258199721495 : 48.857487002645485]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@88f7897[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.5268554687500004,48.850258199721495,2.5378417968750004,48.857487002645485, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request control-flow performed, running requests: 2, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request completed, running requests: 2, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:16 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request completed, running requests: 1, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getMap
+	Angle = 0.0
+	BaseUrl = http://localhost:8080/geoserver/
+	Bbox = SRSEnvelope[2.6147460937500004 : 2.6257324218750004, 48.850258199721495 : 48.857487002645485]
+	BgColor = java.awt.Color[r=255,g=255,b=255]
+	Buffer = 0
+	Clip = null
+	CQLFilter = null
+	Crs = GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+	Elevation = []
+	Env = {}
+	Exceptions = SE_XML
+	FeatureId = null
+	FeatureVersion = null
+	Filter = null
+	Format = image/png
+	FormatOptions = {}
+	Get = true
+	Height = 256
+	Interpolations = []
+	Layers = [org.geoserver.wms.MapLayerInfo@219cb28d[description=<null>,label=objets,layerFeatureConstraints=<null>,layerGroupMetadata={},layerInfo=SecuredLayerInfo[LayerInfoImpl[objets, resource:FeatureTypeInfoImpl[objets]]],name=objets,remoteFeatureSource=<null>,style=<null>,type=0]]
+	MaxFeatures = null
+	Palette = null
+	RawKvp = {REQUEST=GetMap, FORMAT=image/png, SRS=EPSG:4326, BBOX=2.6147460937500004,48.850258199721495,2.6257324218750004,48.857487002645485, VERSION=1.1.1, STYLES=, SERVICE=WMS, WIDTH=256, HEIGHT=256, TRANSPARENT=true, LAYERS=chaleur:objets}
+	RemoteOwsType = null
+	RemoteOwsURL = null
+	Request = GetMap
+	RequestCharset = UTF-8
+	ScaleMethod = null
+	Sld = null
+	SldBody = null
+	SldVersion = null
+	SortBy = null
+	SortByArrays = null
+	SRS = EPSG:4326
+	StartIndex = null
+	StyleBody = null
+	StyleFormat = sld
+	Styles = [StyleImpl[ name=chaleur]]
+	StyleUrl = null
+	StyleVersion = null
+	Tiled = false
+	TilesOrigin = null
+	Time = []
+	Transparent = true
+	ValidateSchema = false
+	Version = 1.1.1
+	ViewParams = null
+	Width = 256
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request control-flow performed, running requests: 1, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:16 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request completed, running requests: 0, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request completed, running requests: 1, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request control-flow performed, running requests: 0, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request completed, running requests: 0, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request control-flow performed, running requests: 0, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request completed, running requests: 0, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request control-flow performed, running requests: 0, blocked requests: 1
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request control-flow performed, running requests: 0, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:16 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request completed, running requests: 0, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request completed, running requests: 0, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request control-flow performed, running requests: 0, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request control-flow performed, running requests: 0, blocked requests: 1
+24 Nov 12:52:16 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request completed, running requests: 0, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request completed, running requests: 0, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request control-flow performed, running requests: 0, blocked requests: 1
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request control-flow performed, running requests: 0, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:16 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request completed, running requests: 0, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request completed, running requests: 0, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request control-flow performed, running requests: 0, blocked requests: 1
+24 Nov 12:52:16 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request completed, running requests: 0, blocked requests: 1
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request control-flow performed, running requests: 0, blocked requests: 1
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:16 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request control-flow performed, running requests: 0, blocked requests: 1
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request completed, running requests: 0, blocked requests: 1
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request control-flow performed, running requests: 0, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request completed, running requests: 0, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request completed, running requests: 0, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request control-flow performed, running requests: 0, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request completed, running requests: 0, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request control-flow performed, running requests: 0, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request completed, running requests: 0, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request control-flow performed, running requests: 0, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request completed, running requests: 0, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:16 INFO   [geoserver.wms] - 
+Request: getServiceInfo
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request [WMS 1.1.1 GetMap] starting, processing through flow controllers
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request control-flow performed, running requests: 0, blocked requests: 1
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request control-flow performed, running requests: 0, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:16 INFO   [geoserver.flow] - releasing flow controllers for [WMS 1.1.1 GetMap]
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request completed, running requests: 0, blocked requests: 0
+24 Nov 12:52:16 INFO   [geoserver.flow] - Request completed, running requests: 0, blocked requests: 0
