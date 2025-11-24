@@ -87,12 +87,12 @@ docker compose exec -t db pg_dump --inserts -U postgres -d mydb > "./db/backup.s
 
 Bienvenue sur notre escape game géographique "Louise Vadeaudeau" ! L'objectif est de ramener chez elle Louise Vadeaudeau, une élève de l'ENSG qui a bu plus que de raison et qui a semé toutes ses affaires sur le campus de la Cité Descartes. Elle a bien sur égaré ses clés et oublié le code de sa résidence...
 
-# Configuration
+## Configuration
 
 
-# Solutions 
+## Solutions 
 
-## Objets
+### Objets
 
 - Téléphone : sur la parcelle Y devant l'ENSG (48.840379, 2.588558)
 - Casquette : juste à côté de l'Etang du Bois de Grâce (48.848699, 2.589121)
@@ -103,17 +103,17 @@ Bienvenue sur notre escape game géographique "Louise Vadeaudeau" ! L'objectif e
 - 2e Bouteille de Jaeger : au 27, rue Jean Wiener (48.8482698, 2.580235745)
 - 3e Bouteille de Jaeger : au Kley Nobel (48.8370957, 2.590833511)
 
-## Personnes 
+### Personnes 
 
 - Killian Grosfront : dans le Gymnase de la Haute Maison (48.839409, 2.592579)
 - Magali Carreaux : sur le chantier de la future gare Noisy-Champs (48.843495, 2.581922)
 - Clara Bourbier : dans le batiment Copernic de l'UGE (48.8394286, 2.5872007)
 - Diego Posédanssabagnole : devant le Lycée René Descartes (48.8442999, 2.585891)
 
-## Louise Vadeaudeau
+### Louise Vadeaudeau
 
 Sur les rails du RER direction Marne La Vallée, à l'est du campus (48.843020, 2.5915524)
 
-# Bugs possibles
+## Bugs possibles
 
-La carte de chaleur met généralement un peu de temps à se charger, et il y a des petits problèmes de calibration dûs à l'échelle de jeu choisie. N'hésitez pas à cliquer et recliquer sur le bouton "Calor" après avoir zoomé ou dézoomé si elle ne se charge pas correctement. 
+La carte de chaleur met généralement un peu de temps à se charger, et il y a des petits problèmes de calibration dus à l'échelle de jeu choisie. N'hésitez pas à cliquer et recliquer sur le bouton "Calor" après avoir zoomé ou dézoomé si elle ne se charge pas correctement. 
