@@ -1,0 +1,17 @@
+<layer>
+  <name>personnes</name>
+  <id>LayerInfoImpl-61594f0a:19ab5dd6231:-7fef</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl-61594f0a:19ab5dd6231:-7fee</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl-61594f0a:19ab5dd6231:-7ff0</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+  <dateCreated>2025-11-24 12:40:23.1 UTC</dateCreated>
+  <dateModified>2025-11-24 12:43:09.373 UTC</dateModified>
+</layer>

@@ -202,8 +202,8 @@ Vue.createApp({
 
         //2 fonction de gestion de la carte de chaleur, disponible sur la carte via une checkbox (Création puis affichage)
         creerHeatmapLayer() {
-            this.heatmapLayer = L.tileLayer.wms('http://localhost:8080/geoserver/escape_chaleur/wms', {
-                layers: 'escape_chaleur:chaleur',
+            this.heatmapLayerObjets = L.tileLayer.wms('http://localhost:8080/geoserver/chaleur/wms', {
+                layers: 'chaleur:objets',
                 format: 'image/png',
                 transparent: true,
                 version: '1.1.1',
@@ -214,10 +214,10 @@ Vue.createApp({
 
         toggleHeatmap() {
             if (this.heatMapVisible) {
-                this.map.removeLayer(this.heatmapLayer);
+                this.map.removeLayer(this.heatmapLayerObjets);
                 this.heatMapVisible = false;
             } else {
-                this.heatmapLayer.addTo(this.map);
+                this.heatmapLayerObjets.addTo(this.map);
                 this.heatMapVisible = true;
             }
         },
@@ -319,7 +319,7 @@ Vue.createApp({
 
                 this.clesRecuperees = true;
                 //On lance l'apparition des personnes qui posent des questions pour obtenir le code
-                this.déclencherApparitionPersonnes();
+                this.declencherApparitionPersonnes();
 
                 let nomCles = "Clés";
                 let imageCles = "images/cles_maison.jpg";
@@ -400,7 +400,7 @@ Vue.createApp({
         //Les personnes n'apparaissent pas dès le début sur la carte : elles apparaissent une fois que Gilles a libéré les clés, et une par une
         
         //On lance le mécanisme
-        déclencherApparitionPersonnes() {
+        declencherApparitionPersonnes() {
             this.ajouterPersonnesCarte(); // On crée tous les marqueurs, invisibles
             this.afficherProchainePersonne();
         },
