@@ -117,3 +117,5 @@ Sur les rails du RER direction Marne La Vallée, à l'est du campus (48.843020, 
 ## Bugs possibles
 
 La carte de chaleur met généralement un peu de temps à se charger, et il y a des petits problèmes de calibration dus à l'échelle de jeu choisie. N'hésitez pas à cliquer et recliquer sur le bouton "Calor" après avoir zoomé ou dézoomé si elle ne se charge pas correctement. 
+
+De manière générale, le zoom est parfois difficilement géré par le jeu, mais dans la mesure où ça n'est pas un problème systématique et que la console ne renvoie aucune erreur, il semblerait que ça soit un bug insolvable de notre côté. 
