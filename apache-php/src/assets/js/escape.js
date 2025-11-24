@@ -218,11 +218,11 @@ Vue.createApp({
 
             markerJules.bindPopup(`
                 <div style="max-width: 200px;">
-                    <h3>CONSEIL : effectuez toutes ces étapes dans l'ordre indiqué</h3>
+                    <h3 style="text-align : center">CONSEIL : effectuez toutes ces étapes dans l'ordre indiqué</h3>
                     <ul>
                         <li>Ramasser les 5 objets que Louise a laissé tomber de son sac,</li> 
-                        <li>Dealer ses clés de maison en échange de 3 bouteilles de Jaeger à Gilles Grocaka qui est surement enterré sous un pont comme le gros clochard de merde qu'il est,</li>
-                        <li>Trouver le code de sa résidence en répondant à 4 questions,</li>
+                        <li>Dealer ses clés de maison en échange de 3 bouteilles de Jaeger à Gilles Grocaka qui est surement bourré sous un pont,</li>
+                        <li>Trouver le code de sa résidence en répondant à 4 questions posées par 4 personnes différentes,</li>
                         <li>Trouver Louise Vadeaudeau en personne qui se balade quelque part dans la zone...</li>
                     </ul>
                 </div>
@@ -292,7 +292,7 @@ Vue.createApp({
                     }
                 }
 
-                alert("Tiens les clés ma belle, tu devrais aller voir Killian Grosfront, Président du BDHess, qui est sûrement sur un lieu sportif du campus");
+                alert("Tiens les clés, tu devrais aller voir Killian Grosfront, Président du BDHess, qui est sûrement sur un lieu sportif du campus");
 
                 this.clesRecuperees = true;
                 this.déclencherApparitionPersonnes();
