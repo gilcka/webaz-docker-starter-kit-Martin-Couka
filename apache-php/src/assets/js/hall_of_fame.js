@@ -1,4 +1,3 @@
-// vue pour le hall of fame dans le menu
 Vue.createApp({
     data() {
         return {

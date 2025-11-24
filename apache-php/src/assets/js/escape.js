@@ -1,9 +1,13 @@
+//Vue qui gère toute la mécanique de jeu
+
 Vue.createApp({
     data() {
         return {
+            //données géographiques de base
             ensgLat: 48.8414,
             ensgLon: 2.5862,
             emprise: 0.009,
+            //gestion du temps
             chrono: {
                 secondes: 0,
                 minutes: 0,
@@ -12,23 +16,27 @@ Vue.createApp({
                 estEnCours: false,
             },
             chronoAffichage: '00:00:00',
+            //gestion des tables sql
             marqueursPersonnes: [],
             marqueursObjets: [],
             marqueurGilles : [],
+            prochainePersonneIndex: 0,
+            indiceDejaLu: {},
+            //gestion de l'inventaire
             inventaireIds: new Set(),
             inventaireCounts: {},
             inventaireIdToName: {},
+            clesRecuperees: false,
+            //gestion de la carte
             map: null,
             heatmapLayer: null,
             heatMapVisible: false,
-            prochainePersonneIndex: 0,
-            clesRecuperees: false,
-            indiceDejaLu: {},
         }
     },
 
     mounted() {
 
+        //chargement des données des API en AJAX et lancement des fonctions de base
         Promise.all([
             fetch('/api/objets').then(r => r.json()),
             fetch('/api/personnes').then(r => r.json()),
@@ -48,6 +56,7 @@ Vue.createApp({
 
     methods: {
         initialisationCarte() {
+            //Construction de la carte via leaflet
             this.map = L.map('map').setView([this.ensgLat, this.ensgLon], 15);
 
             L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -55,6 +64,7 @@ Vue.createApp({
                 attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
             }).addTo(this.map);
 
+            //emprise
             var rectangle = L.rectangle([
                 [this.ensgLat - this.emprise, this.ensgLon - this.emprise], 
                 [this.ensgLat + this.emprise, this.ensgLon + this.emprise]  
@@ -65,45 +75,44 @@ Vue.createApp({
                 weight: 3            
             }).addTo(this.map);
 
+            //Ajout des objets et des marqueurs permanents
             this.ajouterMarqueurJules();
             this.ajouterMarqueurGilles();
             this.ajouterObjetsCarte();
         },
 
         testFin() {
-            // Vérifie que l’inventaire est présent et bien structuré
+            //Fin du jeu appelée depuis un bouton
+
+            //Vérification de la viabilité de l'inventaire
             if (!this.inventaireCounts || typeof this.inventaireCounts !== "object") {
                 console.error("Inventaire incorrect");
                 return;
             }
 
-            // Comptage total des objets
             const totalObjets = Object.values(this.inventaireCounts)
                 .reduce((sum, v) => sum + v, 0);
 
             console.log("Objets dans l'inventaire :", totalObjets);
 
-            // Vérification finale : 7 objets
             if (totalObjets < 7) {
                 alert(`Il te manque encore des objets !  
         Tu en as ${totalObjets}/7.`);
                 return;
             }
 
-            // Demande du code final
+            //Gestion de la partie demande de code et enregistrement des données du joueur
             let code = prompt("Entrez le code de la résidence :");
 
-            if (code === null) return; // Annulation
+            if (code === null) return;
 
             if (code.trim() === "5847") {
                 alert("BRAVO, Louise est tirée du fossé de la parcelle Y grâce à toi");
-                // Arrêt du chrono
                 this.arreterChrono();
                 console.log("Temps final :", this.chronoAffichage);
 
-                // Demander le pseudo du joueur
                 let pseudo = prompt('Bravo ! Sous quel pseudo veux-tu enregistrer ton temps ?');
-                if (pseudo === null) return; // annulation
+                if (pseudo === null) return;
                 console.log("Pseudo entré :", pseudo);
 
                 pseudo = pseudo.trim();
@@ -112,7 +121,7 @@ Vue.createApp({
                     return;
                 }
 
-                const temps = this.chronoAffichage;  // "00:12:57"
+                const temps = this.chronoAffichage;
 
                 fetch('/api/joueurs', {
                     method: 'POST',
@@ -128,7 +137,6 @@ Vue.createApp({
                         const ok = window.confirm("C'est enregistré, tu peux retourner au menu admirer le Hall of Fame");
                         
                         if (ok) {
-                            // Redirection vers la page d'accueil
                             window.location.href = '/';
                         }              
 
@@ -149,7 +157,8 @@ Vue.createApp({
                 alert("Mauvais code chacal, indice : ORDRE D'APPARITION");
             }
         },
-
+        
+        // 3 fonctions de gestion du chronomètre : démarrage, arrêt, affichage
         demarrerChrono() {
             if (!this.chrono.estEnCours) {
                 this.chrono.estEnCours = true;
@@ -191,6 +200,7 @@ Vue.createApp({
             this.chronoAffichage = `${h}:${m}:${s}`;
         },
 
+        //2 fonction de gestion de la carte de chaleur, disponible sur la carte via une checkbox (Création puis affichage)
         creerHeatmapLayer() {
             this.heatmapLayer = L.tileLayer.wms('http://localhost:8080/geoserver/escape_chaleur/wms', {
                 layers: 'escape_chaleur:chaleur',
@@ -202,6 +212,17 @@ Vue.createApp({
             });
         },
 
+        toggleHeatmap() {
+            if (this.heatMapVisible) {
+                this.map.removeLayer(this.heatmapLayer);
+                this.heatMapVisible = false;
+            } else {
+                this.heatmapLayer.addTo(this.map);
+                this.heatMapVisible = true;
+            }
+        },
+
+        //Ajout du marker avec affichage des consignes si besoin
         ajouterMarqueurJules() {
             var markerJules = L.marker([this.ensgLat, this.ensgLon], {
                 icon: L.divIcon({
@@ -229,6 +250,7 @@ Vue.createApp({
             `);
         },
 
+        //Ajout du marker qui bloque l'objet clés
         ajouterMarqueurGilles() {
             const self = this;
 
@@ -245,6 +267,7 @@ Vue.createApp({
                 className: 'label-gilles'
             }).openTooltip();
 
+            //Gestion du zoom
             markerGilles._zoom = 18;
 
             this.map.on('zoomstart', function () {
@@ -261,11 +284,11 @@ Vue.createApp({
                 }
             });
             
+            //On ne met pas le marqueur si on n'a pas encore assez zoomé
             if (this.map.getZoom() < markerGilles._zoom) {
                 this.map.removeLayer(markerGilles);
             }
 
-            // ✔ Fonction fléchée = this = Vue !
             markerGilles.on('click', () => {
                 var vm = this;
 
@@ -295,9 +318,9 @@ Vue.createApp({
                 alert("Tiens les clés, tu devrais aller voir Killian Grosfront, Président du BDHess, qui est sûrement sur un lieu sportif du campus");
 
                 this.clesRecuperees = true;
+                //On lance l'apparition des personnes qui posent des questions pour obtenir le code
                 this.déclencherApparitionPersonnes();
 
-                //Ajout des clés dans l'inventaire
                 let nomCles = "Clés";
                 let imageCles = "images/cles_maison.jpg";
 
@@ -311,7 +334,7 @@ Vue.createApp({
             });
         },
 
-
+        //2 fonctions de gestion de l'inventaire : ajout et retrait des objets
         ajouterObjetInventaire(nomObjet, imageUrl, count) {
             var cases = document.querySelectorAll('aside .inventaire > div');
 
@@ -373,8 +396,28 @@ Vue.createApp({
             return true;
         },
 
-        ajouterPersonnesCarte() {
+        // 4 fonctions de gestion des interactions avec les personnes qui donnent le code
+        //Les personnes n'apparaissent pas dès le début sur la carte : elles apparaissent une fois que Gilles a libéré les clés, et une par une
+        
+        //On lance le mécanisme
+        déclencherApparitionPersonnes() {
+            this.ajouterPersonnesCarte(); // On crée tous les marqueurs, invisibles
+            this.afficherProchainePersonne();
+        },
 
+        //On affiche les personnes suivante via un mécanisme de stockage d'index dans une liste, qui permet de savoir si la personne est déjà passée ou non
+        afficherProchainePersonne() {
+            if (!this.clesRecuperees) return;
+
+            if (this.prochainePersonneIndex >= this.marqueursPersonnes.length) return;
+
+            let item = this.marqueursPersonnes[this.prochainePersonneIndex];
+
+            item.marker.addTo(this.map);
+        },
+
+        ajouterPersonnesCarte() {
+            //Tri des personnes par ordre d'apparition
             this.personnes.sort((a, b) => a.ordre_apparition - b.ordre_apparition);
 
             for (let i = 0; i < this.personnes.length; i++) {
@@ -407,6 +450,7 @@ Vue.createApp({
             }
         },
 
+        //Ouverture d'une fenêtre pop up pour répondre à la question et ainsi obtenir l'objet chiffre
         poserQuestion(personne, marker) {
             let reponse = prompt(personne.message);
             if (reponse === null) return;
@@ -415,17 +459,14 @@ Vue.createApp({
 
                 alert(`Bonne réponse ma vie ! ${personne.indice_fin}`);
 
-                // Donne l'objet
                 this.ajouterObjetInventaire(
                     personne.reponse,
                     personne.image,
                     1
                 );
 
-                // Supprime la personne trouvée
                 this.map.removeLayer(marker);
 
-                // Passe à la suivante
                 this.prochainePersonneIndex++;
                 this.afficherProchainePersonne();
 
@@ -435,23 +476,7 @@ Vue.createApp({
 
         },
 
-        déclencherApparitionPersonnes() {
-            this.ajouterPersonnesCarte(); // On crée tous les marqueurs, invisibles
-            this.afficherProchainePersonne();
-        },
-
-
-        afficherProchainePersonne() {
-            if (!this.clesRecuperees) return;
-
-            if (this.prochainePersonneIndex >= this.marqueursPersonnes.length) return;
-
-            let item = this.marqueursPersonnes[this.prochainePersonneIndex];
-
-            // Ajouter le marker sur la carte
-            item.marker.addTo(this.map);
-        },
-
+        // Fonction d'ajout des objets sur la carte, qui intervient dès le début
         ajouterObjetsCarte() {
             const self = this;
 
@@ -489,7 +514,6 @@ Vue.createApp({
                 });
             }
 
-            // Gestion du zoom
             this.map.on('zoomend', function() {
                 var zoomActuel = self.map.getZoom();
                 
@@ -510,7 +534,6 @@ Vue.createApp({
                 }
             });
 
-            // Masquer les marqueurs en dessous du zoom initial
             for (var k = 0; k < this.marqueursObjets.length; k++) {
                 if (this.map.getZoom() < this.marqueursObjets[k].objet.zoom) {
                     this.map.removeLayer(this.marqueursObjets[k].marker);
@@ -518,12 +541,13 @@ Vue.createApp({
             }
         },
 
+        // Fonction pour afficher des indices accessibles via un bouton Indice dans l'interface carte
         afficherIndice() {
             if (!Array.isArray(this.indices) || this.indices.length === 0) {
                 alert('Aucun indice disponible.');
                 return;
             }
-
+            // On les affiche un par un, en classant selon l'ordre d'id des objets, ils n'apparaissent tous qu'une seule fois
             this.indices.sort((a, b) => a.objet_id - b.objet_id);
 
             for (let i = 0; i < this.indices.length; i++) {
@@ -538,16 +562,6 @@ Vue.createApp({
             }
 
             alert('Tu as déjà vu tous les indices disponibles.');
-        },
-
-        toggleHeatmap() {
-            if (this.heatMapVisible) {
-                this.map.removeLayer(this.heatmapLayer);
-                this.heatMapVisible = false;
-            } else {
-                this.heatmapLayer.addTo(this.map);
-                this.heatMapVisible = true;
-            }
         }
     }
 }).mount('#jeu');

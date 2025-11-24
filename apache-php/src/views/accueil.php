@@ -40,6 +40,7 @@
     <div id='jouer'>
         <a href="/escape">C'est parti</a>
     </div>
+    
   <script src="assets/js/escape.js"></script>
 
 </body>

@@ -66,6 +66,8 @@ INSERT INTO personnes (name, message, reponse, indice_fin, zoom, ordre_apparitio
  ST_SetSRID(ST_MakePoint(2.585891112457032,48.844299902248146), 4326)
 );
 
+-- Puis avec la table vide qui stockera les pseudos et scores des futurs joueurs
+
 DROP TABLE IF EXISTS joueurs;
 
 CREATE TABLE joueurs (
@@ -81,6 +83,8 @@ CREATE TABLE indices (
     objet_id INT NOT NULL, 
     indice TEXT NOT NULL
 );
+
+-- Et enfin avec la table des indices associés par leur id à chacun des objets à trouver
 
 INSERT INTO indices (objet_id, indice) VALUES
 (1, 'Lieu préféré des afters des soirées ENSG'),
