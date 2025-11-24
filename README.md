@@ -4,6 +4,7 @@ Bienvenue sur notre escape game géographique "Louise Vadeaudeau" ! L'objectif e
 
 ## Configuration
 
+Utilisation de l'application DockerDesktop avec les configurations en annexe.
 
 ## Solutions 
 
@@ -35,11 +36,13 @@ La carte de chaleur met généralement un peu de temps à se charger, et il y a 
 
 De manière générale, le zoom est parfois difficilement géré par le jeu, mais dans la mesure où ça n'est pas un problème systématique et que la console ne renvoie aucune erreur, il semblerait que ça soit un bug insolvable de notre côté. 
 
-# Docker Starter Kit
+# Annexe
+
+## Docker Starter Kit
 
 Construit un environnement Docker avec Apache+PHP+Flight, Postgres/PostGIS, pgAdmin, GeoServer.
 
-## Structure générale
+### Structure générale
 
 L’environnement est composé de 4 services (définis dans `docker-compose.yml`) :
 
@@ -50,31 +53,31 @@ L’environnement est composé de 4 services (définis dans `docker-compose.yml`
 | **pgAdmin**            | pgadmin     | Interface web pour gérer Postgres       | `5050:80`                   | `pgadmin_data:/var/lib/pgadmin`          |
 | **GeoServer**          | geoserver   | Serveur cartographique (WMS, WFS, WCS)  | `8080:8080`                 | `geoserver_data:/opt/geoserver/data_dir` |
 
-## Détails des services
+### Détails des services
 
-### Apache+PHP+Flight
+#### Apache+PHP+Flight
 
 - basé sur `./apache-php/Dockerfile`
 - fichiers sources dans `./apache-php/src`
 - http://localhost:1234
 
-### Postgres+PostGIS
+#### Postgres+PostGIS
 
 - user: `postgres`, pass: `postgres`, base: `mydb`, port: `5432`
 - exécute `./db/init.sql` au premier démarrage (contruit une table points, avec 3 points)
 
-### pgadmin
+#### pgadmin
 
 - user: `admin@admin.com`, pass: `admin`
 - permet de se connecter à postgres si besoin (host `db`, port `5432`, user/pass, sans SSL)
 - http://localhost:5050
 
-### GeoServer
+#### GeoServer
 
 - user: `admin`, pass: `geoserver`
 - http://localhost:8080/geoserver
 
-## Volumes & persistance
+### Volumes & persistance
 
 Les volumes Docker permettent de conserver les données même si le conteneur est supprimé et/ou relancé :
 
@@ -92,7 +95,7 @@ volumes:
 - `pgadmin_data` stocke les données pgadmin (connexions)
 - `geoserver_data` stocke la configuration GeoServer (workspaces)
 
-## Commandes de base
+### Commandes de base
 
 ```sh
 # lance la stack Docker
@@ -104,7 +107,7 @@ docker compose down
 docker compose down -v # supprime en plus les volumes
 ```
 
-## Sauvegarde
+### Sauvegarde
 
 Pour récupérer en local les données de la BDD et de GeoServer, exécutez les scripts respectifs depuis la racine du projet
 
